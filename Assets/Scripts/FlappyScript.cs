@@ -91,7 +91,7 @@ public class FlappyScript : MonoBehaviour
         }
         else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
         {
-            FixFlappyRotation();
+            //FixFlappyRotation();
         }
     }
 
@@ -141,8 +141,8 @@ public class FlappyScript : MonoBehaviour
         //solution with negative eulerAngles found here: http://answers.unity3d.com/questions/445191/negative-eular-angles.html
 
         //clamp the values so that -90<rotation<45 *always*
-        birdRotation = new Vector3(0, 0, Mathf.Clamp(birdRotation.z + degreesToAdd, -90, 45));
-        transform.eulerAngles = birdRotation;
+       birdRotation = new Vector3(0, 0, Mathf.Clamp(birdRotation.z + degreesToAdd, -90, 45));
+       transform.eulerAngles = birdRotation;
     }
 
     /// <summary>
