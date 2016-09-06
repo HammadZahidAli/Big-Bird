@@ -9,7 +9,7 @@ public class HouseSpawner : MonoBehaviour {
         Spawn();
     }
     public float p;
-    void Spawn()
+    public void Spawn()
     {
         if (GameStateManager.GameState == GameState.Playing)
         {
@@ -18,7 +18,7 @@ public class HouseSpawner : MonoBehaviour {
             GameObject go = Instantiate(SpawnObject, this.transform.position, Quaternion.identity) as GameObject;
 
         }
-        if (p == 0)
+       if (p == 0)
             Invoke("Spawn", Random.Range(timeMin, timeMax));
         else
             Invoke("Spawn", p);
