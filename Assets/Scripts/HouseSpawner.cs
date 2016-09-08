@@ -14,7 +14,8 @@ public class HouseSpawner : MonoBehaviour {
         if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
-           // float y = Random.Range(-0.5f, 1f);
+            // float y = Random.Range(-0.5f, 1f);
+            SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
             GameObject go = Instantiate(SpawnObject, this.transform.position, Quaternion.identity) as GameObject;
 
         }
