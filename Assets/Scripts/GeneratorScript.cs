@@ -41,17 +41,24 @@ public class GeneratorScript : MonoBehaviour {
 		GenerateObjectsIfRequired();    
 	}
 
-
+    int index = 0;
 	void AddRoom(float farhtestRoomEndX)
 	{
-		//1
-		int randomRoomIndex = Random.Range(0, availableRooms.Length);
-		
-		//2
-		GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
-		
-		//3
-		float roomWidth = room.transform.FindChild("floor").localScale.x;
+        //1
+        //int randomRoomIndex = Random.Range(0, availableRooms.Length);
+
+
+        //2 index
+        //GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
+        GameObject room = (GameObject)Instantiate(availableRooms[index]);
+
+        index++;
+        if (index >= availableRooms.Length)
+            index = 0;
+
+
+        //3
+        float roomWidth = room.transform.FindChild("floor").localScale.x;
 		
 		//4
 		float roomCenter = farhtestRoomEndX + roomWidth * 0.5f;

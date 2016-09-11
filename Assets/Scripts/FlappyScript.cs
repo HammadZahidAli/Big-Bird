@@ -12,7 +12,8 @@ public class FlappyScript : MonoBehaviour
     public Sprite GetReadySprite;
     public float RotateUpSpeed = 1, RotateDownSpeed = 1;
     public GameObject IntroGUI, DeathGUI;
-    public Collider2D restartButtonGameCollider;
+    //public Collider2D restartButtonGameCollider;
+    public GameObject restartButtonGameCollider;
     public float VelocityPerJump = 3;
     public float XSpeed = 1;
 
@@ -69,12 +70,12 @@ public class FlappyScript : MonoBehaviour
                 contactPoint = Input.mousePosition;
 
             //check if user wants to restart the game
-            if (restartButtonGameCollider == Physics2D.OverlapPoint
-                (Camera.main.ScreenToWorldPoint(contactPoint)))
-            {
-                GameStateManager.GameState = GameState.Intro;
-                Application.LoadLevel(Application.loadedLevelName);
-            }
+            //if (restartButtonGameCollider == Physics2D.OverlapPoint
+            //    (Camera.main.ScreenToWorldPoint(contactPoint)))
+            //{
+            //    GameStateManager.GameState = GameState.Intro;
+            //    Application.LoadLevel(Application.loadedLevelName);
+            //}
         }
 
     }
