@@ -180,7 +180,8 @@ public class FlappyScript : MonoBehaviour
     void FlappyDies()
     {
         GameStateManager.GameState = GameState.Dead;
-        DeathGUI.SetActive(true);
+       // DeathGUI.SetActive(true);
+        MainMenuManager.Instance.GameOverPanel.SetActive(true);
         GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
     }
 
