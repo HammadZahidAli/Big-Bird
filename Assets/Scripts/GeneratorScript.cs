@@ -53,9 +53,9 @@ public class GeneratorScript : MonoBehaviour {
         GameObject room = (GameObject)Instantiate(availableRooms[index]);
 
         index++;
-        if (index >= availableRooms.Length)
-            index = 0;
-
+        //if (index >= availableRooms.Length)
+        //    index = 0;
+        index = index % availableRooms.Length;
 
         //3
         float roomWidth = room.transform.FindChild("floor").localScale.x;

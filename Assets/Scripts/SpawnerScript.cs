@@ -7,7 +7,8 @@ public class SpawnerScript : MonoBehaviour
     void Start()
     {
         //SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
-        SpawnObject = SpawnObjects[0];
+        hurdleIndex = 0;
+        SpawnObject = SpawnObjects[hurdleIndex];
         Spawn();
     }
     public float p;
@@ -16,14 +17,15 @@ public class SpawnerScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
-            //SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
             float y = Random.Range(0f, 2f);
-                GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
+            GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
         }
-        if(p==0)
-            Invoke("Spawn", Random.Range(timeMin, timeMax));
-        else
-            Invoke("Spawn", p);
+ 
+        
+        Invoke("Spawn", p);
+        hurdleIndex++;
+        hurdleIndex = hurdleIndex % SpawnObjects.Length;
+        SpawnObject = SpawnObjects[hurdleIndex];
     }
 
     private GameObject SpawnObject;
@@ -31,4 +33,5 @@ public class SpawnerScript : MonoBehaviour
 
     public float timeMin = 0.7f;
     public float timeMax = 2f;
+    public static int hurdleIndex = 0;
 }
