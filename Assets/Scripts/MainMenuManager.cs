@@ -277,5 +277,4 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		
 	}
 
-
 }

@@ -20,7 +20,7 @@ public class FlappyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        this.GetComponent<Animator>().enabled = true;
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;
@@ -87,12 +87,13 @@ public class FlappyScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Intro)
         {
             if (GetComponent<Rigidbody2D>().velocity.y < -1) //when the speed drops, give a boost
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, GetComponent<Rigidbody2D>().mass * 5500 * Time.deltaTime)); //lots of play and stop 
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, GetComponent<Rigidbody2D>().mass * 5500 * Time.deltaTime )); //lots of play and stop 
                                                         //and play and stop etc to find this value, feel free to modify
         }
-        else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
+        //        else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
+        else if (GameStateManager.GameState == GameState.Dead)
         {
-            //FixFlappyRotation();
+            FixFlappyRotation();
         }
     }
 
@@ -134,7 +135,8 @@ public class FlappyScript : MonoBehaviour
                 degreesToAdd = 6 * RotateUpSpeed;
                 break;
             case FlappyYAxisTravelState.GoingDown:
-                degreesToAdd = -3 * RotateDownSpeed;
+                //  degreesToAdd = -3 * RotateDownSpeed;
+                degreesToAdd = 3 * RotateDownSpeed;
                 break;
             default:
                 break;
@@ -144,6 +146,8 @@ public class FlappyScript : MonoBehaviour
         //clamp the values so that -90<rotation<45 *always*
        birdRotation = new Vector3(0, 0, Mathf.Clamp(birdRotation.z + degreesToAdd, -90, 45));
        transform.eulerAngles = birdRotation;
+
+        this.GetComponent<Animator>().enabled = false;
     }
 
     /// <summary>
