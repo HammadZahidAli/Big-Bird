@@ -90,7 +90,7 @@ public class FlappyScript : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, GetComponent<Rigidbody2D>().mass * 5500 * Time.deltaTime )); //lots of play and stop 
                                                         //and play and stop etc to find this value, feel free to modify
         }
-        //        else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
+        //else if (GameStateManager.GameState == GameState.Playing || GameStateManager.GameState == GameState.Dead)
         else if (GameStateManager.GameState == GameState.Dead)
         {
             FixFlappyRotation();
@@ -135,7 +135,7 @@ public class FlappyScript : MonoBehaviour
                 degreesToAdd = 6 * RotateUpSpeed;
                 break;
             case FlappyYAxisTravelState.GoingDown:
-                //  degreesToAdd = -3 * RotateDownSpeed;
+                  //degreesToAdd = -3 * RotateDownSpeed;
                 degreesToAdd = 3 * RotateDownSpeed;
                 break;
             default:
@@ -187,6 +187,10 @@ public class FlappyScript : MonoBehaviour
        // DeathGUI.SetActive(true);
         MainMenuManager.Instance.GameOverPanel.SetActive(true);
         GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
+
+        Debug.Log("Player.Distance:"+PlayerPrefs.GetInt("Player.Distance"));
+
+        PlayerPrefs.SetInt("Player.Distance",ScoreManagerScript.Score);
     }
 
 }
