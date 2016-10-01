@@ -20,6 +20,7 @@ public class FlappyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         this.GetComponent<Animator>().enabled = true;
     }
 

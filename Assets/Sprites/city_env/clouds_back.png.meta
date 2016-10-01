@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 35cd1caef401e9941afbb6eec75c02cf
-timeCreated: 1469271217
-licenseType: Free
+timeCreated: 1475082542
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: clouds_back_0
@@ -37,7 +37,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 2048
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 16

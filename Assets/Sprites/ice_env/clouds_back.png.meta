@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 0142a3e02eb7d014c96499525cebbcc2
-timeCreated: 1469018302
-licenseType: Free
+timeCreated: 1475082545
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -51,7 +51,7 @@ TextureImporter:
   spriteSheet:
     sprites: []
     outline: []
-  spritePackingTag: cityPack
+  spritePackingTag: ice
   userData: 
   assetBundleName: 
   assetBundleVariant: 
