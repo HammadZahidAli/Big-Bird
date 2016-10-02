@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PurchaserInterface : MonoBehaviour {
 
@@ -13,10 +14,11 @@ public class PurchaserInterface : MonoBehaviour {
 	
 	}
 
-
+    public Text show;
     public void OnP1()
     {
         Purchaser.instance.Buyproduct1();
+        show.text = "purchase";
     }
 
 }
