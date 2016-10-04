@@ -115,7 +115,7 @@ public class FlappyScript : MonoBehaviour
     void BoostOnYAxis()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, VelocityPerJump);
-        GetComponent<AudioSource>().PlayOneShot(FlyAudioClip);
+        //GetComponent<AudioSource>().PlayOneShot(FlyAudioClip);
     }
 
 

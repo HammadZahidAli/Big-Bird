@@ -215,20 +215,21 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	/// 
 	/// 
 	public void GamePlayEvent(){
-
-        MainMenuPanel.SetActive(false);
+        GetComponent<FadeIn>().fadeIn();
+        //MainMenuPanel.SetActive(false);
 		//iTween.MoveTo ( MainMenuPanel, iTween.Hash(
 		//	"position", new Vector3 (-844, 0, 0), 
 			
 		//	"delay", 0.5f,
 		//	"easetype",	iTween.EaseType.spring,
 		//	"time", 1.0f));
-		StartCoroutine(OnGamePlay(0.0f));
+		StartCoroutine(OnGamePlay(1f));
 	}
 	IEnumerator OnGamePlay(float waitTime){
 		yield return new WaitForSeconds(waitTime);
-		//SceneManager.LoadScene (1);
-		Application.LoadLevel (1);
+        //SceneManager.LoadScene (1);
+        MainMenuPanel.SetActive(false);
+        Application.LoadLevel (1);
 
 	}
 	/// <summary>
