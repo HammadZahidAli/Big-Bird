@@ -215,6 +215,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	/// 
 	/// 
 	public void GamePlayEvent(){
+
         GetComponent<FadeIn>().fadeIn();
         //MainMenuPanel.SetActive(false);
 		//iTween.MoveTo ( MainMenuPanel, iTween.Hash(
