@@ -5,21 +5,22 @@ public class HouseSpawner : MonoBehaviour {
 
     void Start()
     {
-        SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
+        //SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
         Spawn();
     }
     public float p;
     public void Spawn()
     {
-        if (GameStateManager.GameState == GameState.Playing)
+       // if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
             // float y = Random.Range(-0.5f, 1f);
-            SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
+            SpawnObject = SpawnObjects[0];
             GameObject go = Instantiate(SpawnObject, this.transform.position, Quaternion.identity) as GameObject;
 
         }
-       if (p == 0)
+
+        if (p == 0)
             Invoke("Spawn", Random.Range(timeMin, timeMax));
         else
             Invoke("Spawn", p);

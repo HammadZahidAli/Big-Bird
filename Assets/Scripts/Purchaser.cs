@@ -16,6 +16,7 @@ public class Purchaser : MonoBehaviour, IStoreListener
 
 
     void Awake() {
+
         instance = this;
     }
 
