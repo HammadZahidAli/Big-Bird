@@ -57,6 +57,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
 
         // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
+        builder.Configure<IGooglePlayConfiguration>().SetPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgAylO24Seo/BVp5vb7j5n8cz9im0ZkzPiIVqEYw64IPLWarx7nHBlpqxLypfJ6rcDWhhE717VuQ9Z7Awp9XZXASkXfFvrlBzdxjDtfyIMDUy7fBlaVFcBnCMLqnvXQYYgugJLG4CWAfVfFIDfnpoS7RsuAonFn6UmwUkLZWDDx1vN4EBmPA5kQpkjYngx0e3N5zkuOrsvCHngRgliHevEGLvqGwdNS2ln48IzrGWaSSw6fwVwNxGN+wMsBiRvXis6Tukb783/VtPm78/22igICksDvVmFP/GsBFufFzuDnWBwbGtnxSL8Oe60zltqVqVyXtF06EQV5AcDumHxNmFGwIDAQAB");
+
 
         builder.AddProduct(product_1, ProductType.Consumable);
         builder.AddProduct(product_2, ProductType.Consumable);
