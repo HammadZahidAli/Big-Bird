@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7ad62f8deae14e0449560865b54ae679
-timeCreated: 1469018318
-licenseType: Free
+guid: ed9a8c2a82e197b4c9515cc0054ae9fd
+timeCreated: 1475942542
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -26,8 +26,8 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -5
-  maxTextureSize: 256
+  textureFormat: -2
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -51,7 +51,7 @@ TextureImporter:
   spriteSheet:
     sprites: []
     outline: []
-  spritePackingTag: cityPack
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

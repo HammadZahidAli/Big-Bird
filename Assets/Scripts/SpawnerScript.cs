@@ -18,7 +18,7 @@ public class SpawnerScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
-            float y = Random.Range(1f, 2.5f);
+            float y = Random.Range(-0.4f, 2.5f);
             GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
         }
  

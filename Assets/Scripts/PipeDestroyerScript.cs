@@ -13,11 +13,6 @@ using UnityEngine;
         if (col.tag == "Pipe" || col.tag == "Pipeblank")
                 Destroy(col.gameObject.transform.parent.gameObject); //free up some memory
 
-            if(col.tag == "Cloud")
-            {
-                Destroy(col.gameObject.transform.parent.gameObject); //free up some memory
-
-            }
         }
 
 }

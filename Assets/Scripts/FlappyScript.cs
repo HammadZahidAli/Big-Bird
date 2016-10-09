@@ -189,9 +189,9 @@ public class FlappyScript : MonoBehaviour
         MainMenuManager.Instance.GameOverPanel.SetActive(true);
         GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
 
-        Debug.Log("Player.Distance:"+PlayerPrefs.GetInt("Player.Distance"));
+        //Debug.Log("Player.Distance:"+PlayerPrefs.GetInt("Player.Distance"));
 
-        PlayerPrefs.SetInt("Player.Distance",ScoreManagerScript.Score);
+        
     }
 
 }

@@ -230,7 +230,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		yield return new WaitForSeconds(waitTime);
         //SceneManager.LoadScene (1);
         MainMenuPanel.SetActive(false);
-        Application.LoadLevel (1);
+        SceneManager.LoadScene("MainGame");
 
 	}
 	/// <summary>
