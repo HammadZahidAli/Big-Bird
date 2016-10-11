@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameOverManager : MonoBehaviour {
@@ -10,7 +11,8 @@ public class GameOverManager : MonoBehaviour {
     
     public static int highScore;
     public static int totalScore;
-
+    public static bool revive;
+    public static int temScore;
 	// Use this for initialization
 	void Start () {
 	    
@@ -32,7 +34,7 @@ public class GameOverManager : MonoBehaviour {
         highScoreText.text = highScore.ToString();
         totalScore += ScoreManagerScript.Score;
 
-        PlayerPrefs.SetInt("highScore", ScoreManagerScript.Score);
+        PlayerPrefs.SetInt("highScore", highScore);
         PlayerPrefs.SetInt("totalScore", totalScore);
     }
 
@@ -41,8 +43,20 @@ public class GameOverManager : MonoBehaviour {
     public void OnClick50Coins()
     {
         totalScore -= ScoreManagerScript.Score;
-        PlayerPrefs.SetInt("totalScore", totalScore);
-        Application.LoadLevel(Application.loadedLevel);
+        if (totalScore >= 1)
+        {
+            totalScore -= 1;
+            PlayerPrefs.SetInt("totalScore", totalScore);
+            revive = true;
+            temScore = ScoreManagerScript.Score;
+            Debug.Log("score:"+temScore);
+            MainMenuManager.Instance.RestartEvent();
+
+            
+        }
+        else
+            totalScore += ScoreManagerScript.Score;
+
     }
 
 

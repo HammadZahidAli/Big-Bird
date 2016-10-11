@@ -11,7 +11,8 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	// Use this for initialization
 	
 	void Start () {
-		MenuHome ();
+        Application.targetFrameRate = 60;
+        MenuHome ();
 		//gameOver ();
 	}
 	
@@ -200,21 +201,21 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		
 		yield return new WaitForSeconds(waitTime);
 		GameOverPanel.SetActive(false);
-		//SceneManager.LoadScene (1);
-		
-		Application.LoadLevel (1);
-		
-	}
+        //SceneManager.LoadScene (1);
+
+        SceneManager.LoadScene("MainGame");
+
+    }
 
 
 
-	/// <summary>
-	/// Games the play event.
-	/// </summary>
-	/// 
-	/// 
-	/// 
-	public void GamePlayEvent(){
+    /// <summary>
+    /// Games the play event.
+    /// </summary>
+    /// 
+    /// 
+    /// 
+    public void GamePlayEvent(){
 
         GetComponent<FadeIn>().fadeIn();
         //MainMenuPanel.SetActive(false);

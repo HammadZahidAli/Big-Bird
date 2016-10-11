@@ -11,7 +11,7 @@ public class HouseSpawner : MonoBehaviour {
     public float p;
     public void Spawn()
     {
-       // if (GameStateManager.GameState == GameState.Playing)
+       if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
             // float y = Random.Range(-0.5f, 1f);

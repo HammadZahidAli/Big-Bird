@@ -16,7 +16,7 @@ public class InstantVelocity : MonoBehaviour {
 	void FixedUpdate()
 	{
         //body2D.velocity = velocity;
-        transform.position = new Vector3(transform.position.x+ vel, transform.position.y,transform.position.z);
+       // transform.position = new Vector3(transform.position.x+ vel, transform.position.y,transform.position.z);
 	}
 
 }

@@ -22,6 +22,9 @@ public class FlappyScript : MonoBehaviour
     {
 
         this.GetComponent<Animator>().enabled = true;
+        Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
+        ScoreManagerScript.Score = GameOverManager.temScore;
+        GameOverManager.temScore = 0;
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;
@@ -47,8 +50,11 @@ public class FlappyScript : MonoBehaviour
                 BoostOnYAxis();
                 GameStateManager.GameState = GameState.Playing;
                 IntroGUI.SetActive(false);
-                ScoreManagerScript.Score = 0;
+               
+
+                
             }
+
         }
 
         else if (GameStateManager.GameState == GameState.Playing)
@@ -182,12 +188,17 @@ public class FlappyScript : MonoBehaviour
         }
     }
 
+
+    public GameObject stars;
     void FlappyDies()
     {
+
+        stars.SetActive(true);
         GameStateManager.GameState = GameState.Dead;
        // DeathGUI.SetActive(true);
         MainMenuManager.Instance.GameOverPanel.SetActive(true);
         GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
+
 
         //Debug.Log("Player.Distance:"+PlayerPrefs.GetInt("Player.Distance"));
 

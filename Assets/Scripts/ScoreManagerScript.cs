@@ -11,6 +11,7 @@ public class ScoreManagerScript : MonoBehaviour {
 	void Start () {
        // (Tens.gameObject as GameObject).SetActive(false);
        // (Hundreds.gameObject as GameObject).SetActive(false);
+
 	}
 	
 	// Update is called once per frame
