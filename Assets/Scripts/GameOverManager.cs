@@ -43,9 +43,9 @@ public class GameOverManager : MonoBehaviour {
     public void OnClick50Coins()
     {
         totalScore -= ScoreManagerScript.Score;
-        if (totalScore >= 1)
+        if (totalScore >= 50)
         {
-            totalScore -= 1;
+            totalScore -= 50;
             PlayerPrefs.SetInt("totalScore", totalScore);
             revive = true;
             temScore = ScoreManagerScript.Score;
@@ -57,6 +57,8 @@ public class GameOverManager : MonoBehaviour {
         else
             totalScore += ScoreManagerScript.Score;
 
+        PlayerPrefs.Save();
+
     }
 
 
@@ -65,8 +67,10 @@ public class GameOverManager : MonoBehaviour {
         totalScore -= ScoreManagerScript.Score;
         PlayerPrefs.SetInt("totalScore", totalScore);
 
-        UnityAdsManager.Instance.ShowRewardedVideoAd();
         //Application.LoadLevel(Application.loadedLevel);
+        UnityAdsManager.Instance.ShowRewardedVideoAd();
+
+        PlayerPrefs.Save();
     }
 
 

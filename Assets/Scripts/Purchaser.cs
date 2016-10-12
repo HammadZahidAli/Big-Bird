@@ -24,9 +24,10 @@ public class Purchaser : MonoBehaviour, IStoreListener
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
         
 
-    public static string product_1 = "1000coins";
-    public static string product_2 = "1500coins";
-    public static string product_3 = "2000coins";
+    public static string product_1 = "com.gamesfort.bigbird.300";
+    public static string product_2 = "com.gamesfort.bigbird.700";
+    public static string product_3 = "android.test.purchased";//"com.gamesfort.bigbird.1500";
+    public string apiKey = "";
 
     /*
     // Apple App Store-specific product identifier for the subscription product.
@@ -58,7 +59,7 @@ public class Purchaser : MonoBehaviour, IStoreListener
 
         // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
-        builder.Configure<IGooglePlayConfiguration>().SetPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgAylO24Seo/BVp5vb7j5n8cz9im0ZkzPiIVqEYw64IPLWarx7nHBlpqxLypfJ6rcDWhhE717VuQ9Z7Awp9XZXASkXfFvrlBzdxjDtfyIMDUy7fBlaVFcBnCMLqnvXQYYgugJLG4CWAfVfFIDfnpoS7RsuAonFn6UmwUkLZWDDx1vN4EBmPA5kQpkjYngx0e3N5zkuOrsvCHngRgliHevEGLvqGwdNS2ln48IzrGWaSSw6fwVwNxGN+wMsBiRvXis6Tukb783/VtPm78/22igICksDvVmFP/GsBFufFzuDnWBwbGtnxSL8Oe60zltqVqVyXtF06EQV5AcDumHxNmFGwIDAQAB");
+        builder.Configure<IGooglePlayConfiguration>().SetPublicKey(apiKey);
 
 
         builder.AddProduct(product_1, ProductType.Consumable);
@@ -218,18 +219,27 @@ public class Purchaser : MonoBehaviour, IStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             // The consumable item has been successfully purchased, add 100 coins to the player's in-game score.
             //ScoreManager.score += 100;
+            GameOverManager.totalScore += 300;
+            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            PlayerPrefs.Save();
         }
         // Or ... a non-consumable product has been purchased by this user.
         else if (String.Equals(args.purchasedProduct.definition.id, product_2, StringComparison.Ordinal))
         {
-            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{1}'", args.purchasedProduct.definition.id));
-            // TODO: The non-consumable item has been successfully purchased, grant this item to the player.
+            //Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{1}'", args.purchasedProduct.definition.id));
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            GameOverManager.totalScore += 700;
+            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            PlayerPrefs.Save();
+
         }
         // Or ... a subscription product has been purchased by this user.
         else if (String.Equals(args.purchasedProduct.definition.id, product_3, StringComparison.Ordinal))
         {
-            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{2}'", args.purchasedProduct.definition.id));
-            // TODO: The subscription item has been successfully purchased, grant this to the player.
+            Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
+            GameOverManager.totalScore += 1500;
+            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            PlayerPrefs.Save();
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....
         else

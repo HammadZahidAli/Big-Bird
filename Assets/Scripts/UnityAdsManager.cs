@@ -73,6 +73,7 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 			}	
 	}
 
+    public GameObject successDialog;
 	public GameObject FailureDialog;
 	private void HandleShowResult (ShowResult result)
 	{
@@ -80,25 +81,43 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 		{
 		case ShowResult.Finished:
 			Debug.Log ("Video completed. User rewarded " + rewardQty + " credits.");
-			//CentralVariables.SeenRewardedAd = true;
-			//if (CentralVariables.DoubleCoins) {
-			//	CentralVariables.PlayerCurrentCoins = CentralVariables.PlayerCurrentCoins * 2;
-			//	CentralVariables.SaveToFile ();
-			//}
+                if (ShopManager.coinsAdsbool)
+                {
+                    ShopManager.coinsAdsbool = false;
+                    GameOverManager.totalScore = PlayerPrefs.GetInt("totalscore") + 50;
+                    Debug.Log("total" + GameOverManager.totalScore);
+                    PlayerPrefs.SetInt("totalscore",GameOverManager.totalScore);
+                    PlayerPrefs.Save();
+                    Instantiate(successDialog,successDialog.transform.position,Quaternion.identity);
+                    return;
+                }
+                else
+                {
+                    Debug.Log("coming");
+                    GameOverManager.revive = true;
+                    GameOverManager.temScore = ScoreManagerScript.Score;
+                    Debug.Log("score:" + GameOverManager.temScore);
+                    MainMenuManager.Instance.RestartEvent();
 
-			break;
+                }
+               
+                break;
 		case ShowResult.Skipped:
 			Debug.LogWarning ("Video was skipped.");
 			break;
 		case ShowResult.Failed:
-			
-			//if (CentralVariables.applyforReward || CentralVariables.DoubleCoins) {
-			//	Instantiate (FailureDialog, FailureDialog.transform.position, Quaternion.identity);
-			//	CentralVariables.applyforReward = false;
-			//	CentralVariables.DoubleCoins = false;
-			//}
-				
-			Debug.LogError ("Video failed to show.");
+                if (ShopManager.coinsAdsbool)
+                {
+                    ShopManager.coinsAdsbool = false;
+                    Instantiate(FailureDialog, FailureDialog.transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    GameOverManager.totalScore += ScoreManagerScript.Score;
+                    PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                    Instantiate(FailureDialog, FailureDialog.transform.position, Quaternion.identity);
+                }
+                Debug.LogError ("Video failed to show.");
 			break;
 		}
 	}

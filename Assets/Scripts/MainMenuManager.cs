@@ -13,8 +13,10 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	void Start () {
         Application.targetFrameRate = 60;
         MenuHome ();
-		//gameOver ();
-	}
+
+        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+        //gameOver ();
+    }
 	
 	/// <summary>
 	/// Menus the home.
@@ -230,6 +232,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	IEnumerator OnGamePlay(float waitTime){
 		yield return new WaitForSeconds(waitTime);
         //SceneManager.LoadScene (1);
+        StorePanel.SetActive(false);
         MainMenuPanel.SetActive(false);
         SceneManager.LoadScene("MainGame");
 

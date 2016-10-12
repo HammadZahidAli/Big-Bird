@@ -25,4 +25,17 @@ public class HudMenuManager : MonoBehaviour {
         PausePanel.SetActive(false);
         Time.timeScale = 1;
     }
+
+
+    public void OnClickRestart()
+    {
+        MainMenuManager.Instance.RestartEvent();
+        Time.timeScale = 1;
+    }
+
+    public void OnClickHomeBack()
+    {
+        Time.timeScale = 1;
+        MainMenuManager.Instance.GameOverHomeEvent();
+    }
 }

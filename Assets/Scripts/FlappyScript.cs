@@ -16,15 +16,23 @@ public class FlappyScript : MonoBehaviour
     public GameObject restartButtonGameCollider;
     public float VelocityPerJump = 3;
     public float XSpeed = 1;
-
+    Animator anim;
     // Use this for initialization
     void Start()
     {
 
-        this.GetComponent<Animator>().enabled = true;
+        anim = this.GetComponent<Animator>();
+        anim.enabled = true;
+        anim.SetInteger("selected", ShopManager.selectedbird);
+        Invoke("Loop",0.5f);
         Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
         ScoreManagerScript.Score = GameOverManager.temScore;
         GameOverManager.temScore = 0;
+    }
+
+   void Loop()
+    {
+        anim.SetInteger("selected", 0);
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;

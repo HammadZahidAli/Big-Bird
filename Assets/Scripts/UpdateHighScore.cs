@@ -10,8 +10,9 @@ public class UpdateHighScore : MonoBehaviour {
     void OnEnable()
     {
 
+        Debug.Log("update total " + GameOverManager.totalScore);
         highScoreText.text = "High Score : " + PlayerPrefs.GetInt("highScore").ToString();
-        totalScoreText.text = "Total Score : " + PlayerPrefs.GetInt("totalScore").ToString();
+        totalScoreText.text = "Total Score : " + GameOverManager.totalScore.ToString();
     }
 
 }
