@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using AppAdvisory.social;
 
 public class UpdateHighScore : MonoBehaviour {
 
@@ -14,5 +15,17 @@ public class UpdateHighScore : MonoBehaviour {
         highScoreText.text = "High Score : " + PlayerPrefs.GetInt("highScore").ToString();
         totalScoreText.text = "Total Score : " + GameOverManager.totalScore.ToString();
     }
+
+
+    public void OnClickShowLeaderBoard()
+    {
+        LeaderboardManager.ShowLeaderboardUI();
+    }
+
+    public void OnClickReportLeaderBoard()
+    {
+        LeaderboardManager.ReportScore(20);
+    }
+
 
 }
