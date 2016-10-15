@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundManager : ManagerBase {
+public class SoundManager : SingeltonBase<SoundManager> {
 
 	// to add a new sound effecr,
 	// just add a new AudioClip variable here
@@ -39,7 +39,7 @@ public class SoundManager : ManagerBase {
 	// this method may be called from the outside 
 	// to start the game over music
 	public void PlayGameOverMusic() {
-		PlayMusic (gameOverMusic, false, 0.3f);
+		PlayMusic (gameOverMusic, false, 2f);
 	}
 
 	// this is the master method which plays the selected audio 
@@ -60,7 +60,7 @@ public class SoundManager : ManagerBase {
 	// this method may be called from the outside 
 	// to play the ball falling sound once
 	public void playFallingSound() {
-		playPlayerSound (fallingSound,0.005f);
+		playPlayerSound (fallingSound,0.1f);
 	}
 
 	// this method may be called from the outside 

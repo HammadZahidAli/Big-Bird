@@ -205,12 +205,18 @@ public class FlappyScript : MonoBehaviour
         GameStateManager.GameState = GameState.Dead;
        // DeathGUI.SetActive(true);
         MainMenuManager.Instance.GameOverPanel.SetActive(true);
-        GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
-
+        //GetComponent<AudioSource>().PlayOneShot(DeathAudioClip);
+        SoundManager.Instance.playFallingSound();
+        Invoke("playGameOver",1f);
 
         //Debug.Log("Player.Distance:"+PlayerPrefs.GetInt("Player.Distance"));
 
-        
+
+    }
+
+    void playGameOver()
+    {
+        SoundManager.Instance.PlayGameOverMusic();
     }
 
 }

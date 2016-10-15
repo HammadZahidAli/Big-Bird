@@ -106,6 +106,7 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 			Debug.LogWarning ("Video was skipped.");
 			break;
 		case ShowResult.Failed:
+                Debug.LogWarning("Video failed.");
                 if (ShopManager.coinsAdsbool)
                 {
                     ShopManager.coinsAdsbool = false;

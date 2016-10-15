@@ -83,6 +83,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		
 		yield return new WaitForSeconds(waitTime);
 		
+
 		MainMenuPanel.SetActive(true);
 		StorePanel.SetActive(false);
 		
@@ -149,7 +150,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         GameOverPanel.SetActive(false);
 
         MainMenuPanel.SetActive(true);
-
+        SoundManager.Instance.PlayMenuMusic();
         SceneManager.LoadScene ("MenuScene");
 
 //		Application.LoadLevel (1);
@@ -203,6 +204,8 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		
 		yield return new WaitForSeconds(waitTime);
 		GameOverPanel.SetActive(false);
+
+        SoundManager.Instance.PlayMusicGame();
         //SceneManager.LoadScene (1);
 
         SceneManager.LoadScene("MainGame");
@@ -232,6 +235,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	IEnumerator OnGamePlay(float waitTime){
 		yield return new WaitForSeconds(waitTime);
         //SceneManager.LoadScene (1);
+        SoundManager.Instance.PlayMusicGame();
         StorePanel.SetActive(false);
         MainMenuPanel.SetActive(false);
         SceneManager.LoadScene("MainGame");
