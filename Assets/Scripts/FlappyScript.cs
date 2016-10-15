@@ -24,6 +24,7 @@ public class FlappyScript : MonoBehaviour
         anim = this.GetComponent<Animator>();
         anim.enabled = true;
         anim.SetInteger("selected", ShopManager.selectedbird);
+
         Invoke("Loop",0.5f);
         Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
         ScoreManagerScript.Score = GameOverManager.temScore;

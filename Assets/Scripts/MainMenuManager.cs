@@ -189,7 +189,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	/// Restarts the event.
 	/// </summary>
 	public void RestartEvent(){
-        GameStateManager.GameState = GameState.Intro;
+        //GameStateManager.GameState = GameState.Intro;
         //iTween.MoveTo ( GameOverPanel, iTween.Hash(
         //	"position", new Vector3 (-844, 0, 0), 
         //	"islocal", true, 
@@ -208,7 +208,9 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         SoundManager.Instance.PlayMusicGame();
         //SceneManager.LoadScene (1);
 
+        GameStateManager.GameState = GameState.Intro;
         SceneManager.LoadScene("MainGame");
+        
 
     }
 
