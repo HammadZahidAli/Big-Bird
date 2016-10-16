@@ -36,9 +36,9 @@ public class GeneratorScript : MonoBehaviour {
 
 	void FixedUpdate () {
 		
-		//GenerateRoomIfRequred();
+		GenerateRoomIfRequred();
 
-		//GenerateObjectsIfRequired();    
+		GenerateObjectsIfRequired();    
 	}
 
     int index = 0;

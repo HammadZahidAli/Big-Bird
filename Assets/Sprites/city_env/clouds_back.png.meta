@@ -255,7 +255,7 @@ TextureImporter:
         - {x: 25.277771, y: 16.722221}
         - {x: 24.277771, y: 17.722221}
     outline: []
-  spritePackingTag: cityPack
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
