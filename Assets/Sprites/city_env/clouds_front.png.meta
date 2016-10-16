@@ -35,10 +35,10 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 2
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -229,7 +229,7 @@ TextureImporter:
         - {x: 66.83331, y: -12}
         - {x: 66.83331, y: 31}
     outline: []
-  spritePackingTag: cityPack
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Keyur.Components.ObjectPooling;
+
 
 public class SpawnerScript : MonoBehaviour
 {
-   
+    ObjectPoolerSimple objectPool;
     void Start()
     {
-     
-        //SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
+        objectPool = GetComponent<ObjectPoolerSimple>();
+
         hurdleIndex = 0;
         SpawnObject = SpawnObjects[hurdleIndex];
         Spawn();
@@ -20,6 +22,8 @@ public class SpawnerScript : MonoBehaviour
             //random y position
             float y = Random.Range(-0.4f, 2.5f);
             GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
+
+
         }
  
         

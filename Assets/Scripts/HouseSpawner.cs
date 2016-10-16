@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using Keyur.Components.ObjectPooling;
+
 public class HouseSpawner : MonoBehaviour {
 
+    ObjectPoolerSimple objectPool;
     void Start()
     {
-        //SpawnObject = SpawnObjects[Random.Range(0, SpawnObjects.Length)];
+
+        objectPool = GetComponent<ObjectPoolerSimple>();
         Spawn();
     }
     public float p;
@@ -13,17 +17,18 @@ public class HouseSpawner : MonoBehaviour {
     {
        if (GameStateManager.GameState == GameState.Playing)
         {
+            Debug.Log("new");
             //random y position
             // float y = Random.Range(-0.5f, 1f);
-            SpawnObject = SpawnObjects[0];
-            GameObject go = Instantiate(SpawnObject, this.transform.position, Quaternion.identity) as GameObject;
-
+            //SpawnObject = SpawnObjects[0];
+            // GameObject go = Instantiate(SpawnObject, this.transform.position, Quaternion.identity) as GameObject;
+            GameObject go = objectPool.GetPooledObject();
+            go.transform.position = transform.position;
+            go.SetActive(true);
         }
 
-        if (p == 0)
-            Invoke("Spawn", Random.Range(timeMin, timeMax));
-        else
-            Invoke("Spawn", p);
+
+         Invoke("Spawn", p);
     }
 
     private GameObject SpawnObject;
