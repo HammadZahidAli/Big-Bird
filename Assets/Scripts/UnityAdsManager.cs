@@ -5,13 +5,13 @@ using UnityEngine.Advertisements; // Using the Unity Ads namespace.
 
 public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 
-
-	#if !UNITY_ADS // If the Ads service is not enabled...
-	public string gameId; // Set this value from the inspector.
+    public string gameId; // Set this value from the inspector.
+#if !UNITY_ADS // If the Ads service is not enabled...
+	
 	public bool enableTestMode = true;
-	#endif
+#endif
 
-	IEnumerator Start ()
+    IEnumerator Start ()
 	{
 		#if !UNITY_ADS // If the Ads service is not enabled...
 		if (Advertisement.isSupported) { // If runtime platform is supported...

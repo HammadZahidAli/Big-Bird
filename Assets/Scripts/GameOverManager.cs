@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using AppAdvisory.social;
 
 public class GameOverManager : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class GameOverManager : MonoBehaviour {
         if(ScoreManagerScript.Score > highScore)
         {
             highScore = ScoreManagerScript.Score;
+            LeaderboardManager.ReportScore(highScore);
         }
         highScoreText.text = highScore.ToString();
         totalScore += ScoreManagerScript.Score;

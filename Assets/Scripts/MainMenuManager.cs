@@ -11,6 +11,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	// Use this for initialization
 	
 	void Start () {
+ 
         Application.targetFrameRate = 60;
         MenuHome ();
 
@@ -240,7 +241,8 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         SoundManager.Instance.PlayMusicGame();
         StorePanel.SetActive(false);
         MainMenuPanel.SetActive(false);
-        SceneManager.LoadScene("MainGame");
+        //SceneManager.LoadScene("MainGame");
+        SceneManager.LoadSceneAsync("MainGame");
 
 	}
 	/// <summary>
