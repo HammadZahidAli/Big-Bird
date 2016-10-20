@@ -80,7 +80,7 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 		switch (result)
 		{
 		case ShowResult.Finished:
-			Debug.Log ("Video completed. User rewarded " + rewardQty + " credits.");
+			Debug.Log ("Video completed. User rewarded " + ShopManager.coinsAdsbool + " credits.");
                 if (ShopManager.coinsAdsbool)
                 {
                     ShopManager.coinsAdsbool = false;
