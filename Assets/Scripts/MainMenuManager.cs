@@ -7,15 +7,41 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	public Animator contentPanel;
 	public GameObject MainMenuPanel,StorePanel, GameOverPanel,soundObject;
 	public Sprite mute,sound;
-	
-	// Use this for initialization
-	
-	void Start () {
+
+    // Use this for initialization
+    public GameObject panel;
+
+    public GameObject o1;
+    public GameObject o2;
+    public GameObject o3;
+    void Start () {
  
         Application.targetFrameRate = 60;
         MenuHome ();
 
         GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+
+        o1.SetActive(true);
+        o2.SetActive(true);
+        o3.SetActive(true);
+
+        int n = Random.Range(1, 3);
+        panel.SetActive(true);
+        switch (n)
+        {
+            case 1:
+                o1.SetActive(true);
+                break;
+            case 2:
+                o2.SetActive(true);
+                break;
+
+            case 3:
+                o3.SetActive(true);
+                break;
+
+        }
+
         //gameOver ();
     }
 	

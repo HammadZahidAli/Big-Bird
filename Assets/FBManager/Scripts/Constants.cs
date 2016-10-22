@@ -10,6 +10,6 @@ namespace GS
             inviteDialogTitle = "Do Challenge Your Friends",
             inviteDialogMsg = "Play and Win Prizes";
         public static Uri fbShareURI = new Uri("https://play.google.com/store/apps/details?id=com.gamesfort.bigbird"),
-                fbSharePicURI = new Uri("http://imgur.com/6rpNjnf");
+                fbSharePicURI = new Uri("http://imgur.com/ZaWulSh");
     }
 }

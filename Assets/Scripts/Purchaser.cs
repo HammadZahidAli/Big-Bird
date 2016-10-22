@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using UnityEngine.Analytics;
 
 // Placing the Purchaser class in the CompleteProject namespace allows it to interact with ScoreManager, 
 // one of the existing Survival Shooter scripts.
@@ -81,6 +82,7 @@ public class Purchaser : MonoBehaviour, IStoreListener
     public void Buyproduct1()
     {
         BuyProductID(product_1);
+        Analytics.Transaction(product_1, 0.99M, "GBP", apiKey, null);
     }
 
 
@@ -88,6 +90,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
     public void Buyproduct2()
     {
         BuyProductID(product_2);
+        Analytics.Transaction(product_2, 1.99M, "GBP", apiKey, null);
+
     }
 
 
@@ -95,6 +99,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
     public void Buyproduct3()
     {
         BuyProductID(product_3);
+        Analytics.Transaction(product_3, 2.99M, "GBP", apiKey, null);
+
     }
 
 

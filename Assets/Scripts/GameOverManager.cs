@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+// Reference the Unity Analytics namespace
+using UnityEngine.Analytics;
 
 using AppAdvisory.social;
 
@@ -16,8 +19,19 @@ public class GameOverManager : MonoBehaviour {
     public static int temScore;
 	// Use this for initialization
 	void Start () {
-	    
-	}
+        Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+  {
+    { "bird", ShopManager.selectedbird },
+    { "coins", GameOverManager.temScore }
+  
+  });
+    }
+    // Reference the Collections Generic namespace
+
+
+  int totalPotions = 5;
+int totalCoins = 100;
+
 
     void OnEnable()
     {
