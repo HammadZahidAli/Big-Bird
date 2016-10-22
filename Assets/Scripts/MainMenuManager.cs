@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
 public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	
 	public Animator contentPanel;
@@ -15,7 +17,9 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
     public GameObject o2;
     public GameObject o3;
     void Start () {
- 
+        AdBuddizBinding.SetAndroidPublisherKey("a6fc1672-57f9-4e13-ba30-00e2e09eb9e6");
+        AdBuddizBinding.CacheAds();
+        AdBuddizBinding.SetTestModeActive();
         Application.targetFrameRate = 60;
         MenuHome ();
 

@@ -25,6 +25,8 @@ public class GameOverManager : MonoBehaviour {
     { "coins", GameOverManager.temScore }
   
   });
+
+        AdBuddizBinding.ShowAd();
     }
     // Reference the Collections Generic namespace
 
