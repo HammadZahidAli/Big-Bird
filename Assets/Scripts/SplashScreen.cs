@@ -12,9 +12,9 @@ public class SplashScreen : MonoBehaviour {
     {
         splashImage.canvasRenderer.SetAlpha(0.1f);
         fadein();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         fadeout();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0f);
 
         //SceneManager.LoadScene(LoadScene);
         SceneManager.LoadSceneAsync(LoadScene);

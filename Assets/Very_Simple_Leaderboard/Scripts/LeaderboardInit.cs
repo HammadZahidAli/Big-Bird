@@ -12,7 +12,7 @@ using System;
 
 namespace AppAdvisory.social
 {
-	public class LeaderboardInit : MonoBehaviour 
+	public class LeaderboardInit : SingeltonBase<LeaderboardInit> 
 	{
 		public LEADERBOARDIDS leaderboardIds;
 		public void SetLEADERBORDIDS(LEADERBOARDIDS t)

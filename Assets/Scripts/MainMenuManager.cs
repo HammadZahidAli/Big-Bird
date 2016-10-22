@@ -210,8 +210,8 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         //SceneManager.LoadScene (1);
 
         GameStateManager.GameState = GameState.Intro;
-        SceneManager.LoadScene("MainGame");
-        
+        SceneManager.LoadScene("Loading");//MainGame
+
 
     }
 
@@ -242,7 +242,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         StorePanel.SetActive(false);
         MainMenuPanel.SetActive(false);
         //SceneManager.LoadScene("MainGame");
-        SceneManager.LoadSceneAsync("MainGame");
+        SceneManager.LoadSceneAsync("Loading");
 
 	}
 	/// <summary>

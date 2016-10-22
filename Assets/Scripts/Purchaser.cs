@@ -24,9 +24,9 @@ public class Purchaser : MonoBehaviour, IStoreListener
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
 
 
-    public static string product_1 =  "android.test.purchased";//;"1000coins";//"com.gamesfort.bigbird.300";
-    public static string product_2 = "1500coins";//"com.gamesfort.bigbird.700";
-    public static string product_3 = "2000coins";//"android.test.purchased";//"com.gamesfort.bigbird.1500";
+    public static string product_1 = "com.gamesfort.bigbird.500";//"com.gamesfort.bigbird.300";
+    public static string product_2 = "com.gamesfort.bigbird.1000";//"com.gamesfort.bigbird.700";
+    public static string product_3 = "com.gamesfort.bigbird.2000";//"android.test.purchased";//"com.gamesfort.bigbird.1500";
     public string apiKey = "";
 
     /*
