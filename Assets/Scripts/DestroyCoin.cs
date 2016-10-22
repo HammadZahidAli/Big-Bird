@@ -10,8 +10,8 @@ public class DestroyCoin : MonoBehaviour {
         Debug.Log("coming");
         if (coll.gameObject.tag == "Flappy")
         {
-           
-            Destroy(gameObject);
+
+            gameObject.SetActive(false);
         }
     }
 }

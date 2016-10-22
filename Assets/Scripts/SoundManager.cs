@@ -3,9 +3,26 @@ using System.Collections;
 
 public class SoundManager : SingeltonBase<SoundManager> {
 
-	// to add a new sound effecr,
-	// just add a new AudioClip variable here
-	public AudioClip shatterSound;
+    public AudioSource efxSource;
+   // public AudioSource musicSource;
+
+
+    public float lowPitchRange = 0.95f;
+    public float highPitchRange = 1.05f;
+
+    public void RandomizeSfx(params AudioClip[] clips)
+    {
+        int randomIndex = Random.Range(0, clips.Length);
+        float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+
+        efxSource.pitch = randomPitch;
+        efxSource.clip = clips[randomIndex];
+        efxSource.Play();
+    }
+
+    // to add a new sound effecr,
+    // just add a new AudioClip variable here
+    public AudioClip shatterSound;
 	public AudioClip gemCollectSound;
 	public AudioClip fallingSound;
 	public AudioSource audioSource;

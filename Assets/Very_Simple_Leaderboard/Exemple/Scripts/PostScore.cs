@@ -10,10 +10,14 @@ public class PostScore : MonoBehaviour
 	void Awake()
 	{
 		GetComponent<Button>().onClick.AddListener(OnClicked);
-	}
+        textScore.GetComponent<Text>().text = GameOverManager.highScore+"";
+
+    }
 
 	void OnClicked()
 	{
 		LeaderboardManager.ReportScore(score);
 	}
+
+    public GameObject textScore;
 }
