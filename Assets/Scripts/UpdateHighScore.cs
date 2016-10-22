@@ -28,4 +28,11 @@ public class UpdateHighScore : MonoBehaviour {
     }
 
 
+    public GameObject FBCanvas;
+    public void OnClickFBLeaderboard()
+    {
+        FBCanvas.SetActive(true);
+    }
+
+
 }
