@@ -176,6 +176,8 @@ public class FlappyScript : MonoBehaviour
         {
             if (col.gameObject.tag == "Pipeblank") //pipeblank is an empty gameobject with a collider between the two pipes
             {
+                glow.SetActive(true);
+                Invoke("OffGlow", 0.3f);
                 GetComponent<AudioSource>().PlayOneShot(ScoredAudioClip);
                 ScoreManagerScript.Score++;
             }
@@ -197,8 +199,12 @@ public class FlappyScript : MonoBehaviour
         }
     }
 
-
+    public GameObject glow;
     public GameObject stars;
+    void OffGlow()
+    {
+        glow.SetActive(false);
+    }
     void FlappyDies()
     {
 

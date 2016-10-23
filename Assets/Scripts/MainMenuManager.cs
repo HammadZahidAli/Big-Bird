@@ -16,15 +16,9 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
     public GameObject o1;
     public GameObject o2;
     public GameObject o3;
-    void Start () {
-        AdBuddizBinding.SetAndroidPublisherKey("a6fc1672-57f9-4e13-ba30-00e2e09eb9e6");
-        AdBuddizBinding.CacheAds();
-        AdBuddizBinding.SetTestModeActive();
-        Application.targetFrameRate = 60;
-        MenuHome ();
 
-        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
-
+    void InvokePopup()
+    {
         o1.SetActive(true);
         o2.SetActive(true);
         o3.SetActive(true);
@@ -45,6 +39,18 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
                 break;
 
         }
+
+    }
+
+    void Start () {
+        AdBuddizBinding.SetAndroidPublisherKey("a6fc1672-57f9-4e13-ba30-00e2e09eb9e6");
+        AdBuddizBinding.CacheAds();
+        AdBuddizBinding.SetTestModeActive();
+        Application.targetFrameRate = 60;
+        MenuHome ();
+
+        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+        Invoke("InvokePopup",3f);
 
         //gameOver ();
     }

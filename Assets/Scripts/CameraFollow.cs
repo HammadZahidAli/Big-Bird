@@ -10,8 +10,9 @@ public class CameraFollow : MonoBehaviour {
         for (int i = 0; i < birds.Length; i++)
             birds[i].SetActive(false);
 
-        cameraZ = transform.position.z;
 
+        cameraZ = transform.position.z;
+        ShopManager.selectedbird = 6;
         if (ShopManager.selectedbird == 1)
         { birds[0].SetActive(true); Player = birds[0].transform; }
         else if (ShopManager.selectedbird == 2)

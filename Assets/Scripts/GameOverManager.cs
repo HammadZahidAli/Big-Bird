@@ -17,6 +17,8 @@ public class GameOverManager : MonoBehaviour {
     public static int totalScore;
     public static bool revive;
     public static int temScore;
+    public static int count = 1;
+
 	// Use this for initialization
 	void Start () {
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
@@ -25,7 +27,7 @@ public class GameOverManager : MonoBehaviour {
     { "coins", GameOverManager.temScore }
   
   });
-
+        if(count % 2 == 0)
         AdBuddizBinding.ShowAd();
     }
     // Reference the Collections Generic namespace
