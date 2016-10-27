@@ -4,7 +4,6 @@ using System.Collections;
 public class SoundManager : SingeltonBase<SoundManager> {
 
     public AudioSource efxSource;
-   // public AudioSource musicSource;
 
 
     public float lowPitchRange = 0.95f;
@@ -37,7 +36,37 @@ public class SoundManager : SingeltonBase<SoundManager> {
 
 	// thsi is the music played when the script awakes
 	public void Start() {
-		PlayMenuMusic();
+        Application.targetFrameRate = 100;
+
+        if (PlayerPrefs.GetInt("firstTime") == 0)
+        {
+            UpdateHighScore.currentSoundState = 1;
+            PlayerPrefs.SetInt("firstTime", 1);
+            PlayerPrefs.SetInt("currentSoundState", 1);
+            PlayerPrefs.Save();
+        }
+
+        UpdateHighScore.currentSoundState = PlayerPrefs.GetInt("currentSoundState");
+
+        if(UpdateHighScore.currentSoundState == 1)
+        {
+
+            SoundManager.Instance.musicSource.mute = false;
+            SoundManager.Instance.audioSource.mute = false;
+            SoundManager.Instance.playerAudioSource.mute = false;
+        }
+        else
+        {
+            SoundManager.Instance.musicSource.mute = true;
+            SoundManager.Instance.audioSource.mute = true;
+            SoundManager.Instance.playerAudioSource.mute = true;
+        }
+
+        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+        GameOverManager.highScore = PlayerPrefs.GetInt("highScore");
+
+ 
+        PlayMenuMusic();
 	}
 
 	// this method may be called from the outside 

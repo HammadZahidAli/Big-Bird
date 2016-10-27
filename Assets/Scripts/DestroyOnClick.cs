@@ -9,4 +9,9 @@ public class DestroyOnClick : MonoBehaviour {
         Parent.SetActive(false);
 
     }
+
+    public void OnClickCanvas()
+    {
+        Parent.GetComponent<Canvas>().enabled = false;
+    }
 }

@@ -8,7 +8,7 @@ using Facebook.MiniJSON;
 using System.Linq;
 namespace GS
 {
-    public class FBManager : SingeltonBase<FBManager>
+    public class FBManager : MonoBehaviour
     {
         public GameObject leaderboardLoading, inviteLoading;
         public Sprite[] stateSprites;
@@ -131,9 +131,7 @@ namespace GS
         }
         void PostOnlyIfPermitted()
         {
-            //var scoreData = new Dictionary<string, string>() { { "score", scoreInputField.textComponent.text } };
-            var scoreData = new Dictionary<string, string>() { { "score", GameOverManager.highScore.ToString() } };
-
+            var scoreData = new Dictionary<string, string>() { { "score", scoreInputField.textComponent.text } };
             FB.API("/me/scores", HttpMethod.POST, delegate (IGraphResult r)
             {
                 if (!r.Cancelled || r.Error != null)
@@ -426,7 +424,7 @@ namespace GS
             else
             {
                 string shareDesc = (highScoreFacebook > 0) ?
-                Constants.shareDialogMsg + " My High Score is " + highScoreFacebook + " .Do Challenge Me.":
+                Constants.shareDialogMsg + " My High Score is " + highScoreFacebook :
                 Constants.shareDialogMsg;
 
                 if (FB.IsLoggedIn)

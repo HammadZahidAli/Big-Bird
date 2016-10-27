@@ -8,9 +8,11 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
     public string gameId; // Set this value from the inspector.
 #if !UNITY_ADS // If the Ads service is not enabled...
 	
-	public bool enableTestMode = true;
+	
 #endif
 
+
+    public bool enableTestMode = false;
     IEnumerator Start ()
 	{
 		#if !UNITY_ADS // If the Ads service is not enabled...
@@ -23,7 +25,7 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 		// Wait until Unity Ads is initialized,
 		//  and the default ad placement is ready.
 		while (!Advertisement.isInitialized || !Advertisement.IsReady()) {
-			Debug.Log("UnityAds:: waiting");
+			//Debug.Log("UnityAds:: waiting");
 			yield return new WaitForSeconds(0.5f);
 		}
 
@@ -34,7 +36,7 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 	{
 		// Show the default ad placement.
 		if (Advertisement.IsReady (VideozoneId)) {
-			Debug.Log ("Unity Ads video Showing ");
+			//Debug.Log ("Unity Ads video Showing ");
 
 			ShowOptions options = new ShowOptions ();
 			options.resultCallback = HandleShowResult;
@@ -80,27 +82,28 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 		switch (result)
 		{
 		case ShowResult.Finished:
-			Debug.Log ("Video completed. User rewarded " + ShopManager.coinsAdsbool + " credits.");
+                
                 if (ShopManager.coinsAdsbool)
                 {
                     ShopManager.coinsAdsbool = false;
-                    GameOverManager.totalScore = PlayerPrefs.GetInt("totalscore") + 50;
-                    Debug.Log("total" + GameOverManager.totalScore);
-                    PlayerPrefs.SetInt("totalscore",GameOverManager.totalScore);
+
+                    GameOverManager.totalScore += 20;
+
+                    PlayerPrefs.SetInt("totalscore", GameOverManager.totalScore);
                     PlayerPrefs.Save();
-                    Instantiate(successDialog,successDialog.transform.position,Quaternion.identity);
+
+                    Instantiate(successDialog, successDialog.transform.position, Quaternion.identity);
                     return;
                 }
                 else
                 {
-                    Debug.Log("coming");
                     GameOverManager.revive = true;
                     GameOverManager.temScore = ScoreManagerScript.Score;
-                    Debug.Log("score:" + GameOverManager.temScore);
+
                     MainMenuManager.Instance.RestartEvent();
 
                 }
-               
+
                 break;
 		case ShowResult.Skipped:
 			Debug.LogWarning ("Video was skipped.");

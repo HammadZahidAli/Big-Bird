@@ -27,8 +27,11 @@ public class GameOverManager : MonoBehaviour {
     { "coins", GameOverManager.temScore }
   
   });
-        if(count % 2 == 0)
-        AdBuddizBinding.ShowAd();
+
+        //if (count % 2 == 0)
+       
+
+       // count++;
     }
     // Reference the Collections Generic namespace
 
@@ -41,7 +44,8 @@ int totalCoins = 100;
     {
 
         scoreText.text = ScoreManagerScript.Score.ToString();
-        
+
+       // Debug.Log("total: "+ totalScore);
 
         totalScore = PlayerPrefs.GetInt("totalScore");
         highScore = PlayerPrefs.GetInt("highScore");
@@ -49,29 +53,55 @@ int totalCoins = 100;
         if(ScoreManagerScript.Score > highScore)
         {
             highScore = ScoreManagerScript.Score;
-            LeaderboardManager.ReportScore(highScore);
+            
         }
         highScoreText.text = highScore.ToString();
         totalScore += ScoreManagerScript.Score;
 
         PlayerPrefs.SetInt("highScore", highScore);
         PlayerPrefs.SetInt("totalScore", totalScore);
+        PlayerPrefs.Save();
+
+        
+        Invoke("Do",1f);
+
+        count++;
     }
 
+    void Do()
+    {
+
+        if (count % 6 == 0)
+            UnityAdsManager.Instance.ShowVideoAd();
+
+
+        AdBuddizBinding.ShowAd();
+
+        
+    }
+
+
+
+
+
+    public void OnClickPosttoLeaderboard()
+    {
+        LeaderboardManager.ReportScore(highScore);
+    }
 
     //On Coins Revive
     public void OnClick50Coins()
     {
         totalScore -= ScoreManagerScript.Score;
-        if (totalScore >= 50)
+        if (totalScore >= 10)
         {
-            totalScore -= 50;
+            totalScore -= 10;
             PlayerPrefs.SetInt("totalScore", totalScore);
             revive = true;
             temScore = ScoreManagerScript.Score;
             Debug.Log("score:"+temScore);
             MainMenuManager.Instance.RestartEvent();
-
+            PlayerPrefs.Save();
             
         }
         else
@@ -92,6 +122,10 @@ int totalCoins = 100;
 
         PlayerPrefs.Save();
     }
+
+
+
+
 
 
 

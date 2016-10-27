@@ -42,14 +42,15 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     }
 
+    public string adBuddizKey;
     void Start () {
-        AdBuddizBinding.SetAndroidPublisherKey("a6fc1672-57f9-4e13-ba30-00e2e09eb9e6");
+        AdBuddizBinding.SetAndroidPublisherKey(adBuddizKey);
         AdBuddizBinding.CacheAds();
-        AdBuddizBinding.SetTestModeActive();
-        Application.targetFrameRate = 60;
+
+        
         MenuHome ();
 
-        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+       
         Invoke("InvokePopup",3f);
 
         //gameOver ();
@@ -110,7 +111,11 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	}
 	
 	
-	
+	void Do()
+    {
+        MainMenuPanel.SetActive(true);
+        //MainMenuPanel.GetComponent<UpdateHighScore>().enabled = true;
+    }
 	/// <summary>
 	/// Menu store hide.
 	/// </summary>
@@ -119,12 +124,15 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 	IEnumerator MenuStoreHide(float waitTime) {
 		
 		yield return new WaitForSeconds(waitTime);
-		
 
-		MainMenuPanel.SetActive(true);
-		StorePanel.SetActive(false);
-		
-		MenuHome ();
+
+       // MainMenuPanel.SetActive(false);
+        StorePanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
+
+        Invoke("Do",1f);
+       
+        MenuHome ();
 	}
 	
 	/// <summary>
@@ -242,12 +250,13 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		yield return new WaitForSeconds(waitTime);
 		GameOverPanel.SetActive(false);
 
-        SoundManager.Instance.PlayMusicGame();
+       
         //SceneManager.LoadScene (1);
 
-        GameStateManager.GameState = GameState.Intro;
+       
         SceneManager.LoadScene("Loading");//MainGame
-
+        GameStateManager.GameState = GameState.Intro;
+        SoundManager.Instance.PlayMusicGame();
 
     }
 

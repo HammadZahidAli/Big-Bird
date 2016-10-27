@@ -28,7 +28,7 @@ namespace AppAdvisory.social
 			}
 			set
 			{
-				Debug.Log("setting leaderboard id = " + value.ToString());
+				//Debug.Log("setting leaderboard id = " + value.ToString());
 				PlayerPrefs.SetString("__LEADERBOARDID",value);
 				PlayerPrefs.Save();
 			}

@@ -26,7 +26,7 @@ public class FlappyScript : MonoBehaviour
         anim.SetInteger("selected", ShopManager.selectedbird);
 
         Invoke("Loop",0.5f);
-        Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
+       // Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
         ScoreManagerScript.Score = GameOverManager.temScore;
         GameOverManager.temScore = 0;
     }
@@ -178,7 +178,8 @@ public class FlappyScript : MonoBehaviour
             {
                 glow.SetActive(true);
                 Invoke("OffGlow", 0.3f);
-                GetComponent<AudioSource>().PlayOneShot(ScoredAudioClip);
+               // GetComponent<AudioSource>().PlayOneShot(ScoredAudioClip);
+                SoundManager.Instance.playGemSound();
                 ScoreManagerScript.Score++;
             }
             else if (col.gameObject.tag == "Pipe")

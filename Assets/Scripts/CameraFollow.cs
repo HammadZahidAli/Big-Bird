@@ -12,7 +12,8 @@ public class CameraFollow : MonoBehaviour {
 
 
         cameraZ = transform.position.z;
-        ShopManager.selectedbird = 6;
+
+
         if (ShopManager.selectedbird == 1)
         { birds[0].SetActive(true); Player = birds[0].transform; }
         else if (ShopManager.selectedbird == 2)
@@ -38,7 +39,7 @@ public class CameraFollow : MonoBehaviour {
 
 	void Update () {
         
-        transform.position = new Vector3(Player.position.x + 0.3f, 0, cameraZ);
+        transform.position = new Vector3(Player.position.x + 0.65f, 0, cameraZ);
        
 	}
 

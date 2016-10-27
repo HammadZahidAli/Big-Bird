@@ -17,7 +17,7 @@ public class HouseSpawner : MonoBehaviour {
     {
        if (GameStateManager.GameState == GameState.Playing)
         {
-            Debug.Log("new");
+            //Debug.Log("new");
             //random y position
             // float y = Random.Range(-0.5f, 1f);
             //SpawnObject = SpawnObjects[0];

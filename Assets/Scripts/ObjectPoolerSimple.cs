@@ -56,7 +56,7 @@ namespace Keyur.Components.ObjectPooling
           /// <returns></returns>
 		public GameObject GetPooledObject()
 		{
-            Debug.Log("pooledObjectsList "+ pooledObjectsList.Count);
+          //  Debug.Log("pooledObjectsList "+ pooledObjectsList.Count);
                //return first non used clone from list
 			for (int i=0; i<pooledObjectsList.Count; i++)
 			{

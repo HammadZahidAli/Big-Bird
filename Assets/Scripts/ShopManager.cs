@@ -468,7 +468,7 @@ public class ShopManager : MonoBehaviour {
     public void OnClickWatchtoAddCoins()
     {
         ShopManager.coinsAdsbool = true;
-        Debug.Log("state"+ ShopManager.coinsAdsbool);
+       
         UnityAdsManager.Instance.ShowRewardedVideoAd();
     }
 

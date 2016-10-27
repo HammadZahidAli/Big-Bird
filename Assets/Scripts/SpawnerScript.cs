@@ -8,8 +8,8 @@ public class SpawnerScript : MonoBehaviour
     ObjectPoolerSimple objectPool;
     void Start()
     {
+      //  objectPool = GetComponent<ObjectPoolerSimple>();
         objectPool = GetComponent<ObjectPoolerSimple>();
-
         hurdleIndex = 0;
         SpawnObject = SpawnObjects[hurdleIndex];
         Spawn();
@@ -20,9 +20,12 @@ public class SpawnerScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
-            float y = Random.Range(-0.4f, 2.5f);
-            GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
-
+            float y = Random.Range(-0.4f, 3.3f);
+            //GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
+            GameObject go = objectPool.GetPooledObject();
+            go.SetActiveRecursively(true);
+            go.transform.position = new Vector3( transform.position.x, y, transform.position.z);
+            go.SetActive(true);
 
         }
  

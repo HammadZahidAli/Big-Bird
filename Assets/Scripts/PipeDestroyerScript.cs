@@ -11,8 +11,9 @@ using UnityEngine;
         {
 
         if (col.tag == "Pipe" || col.tag == "Pipeblank")
-            Destroy(col.gameObject.transform.parent.gameObject); //free up some memory
-        
+          //  Destroy(col.gameObject.transform.parent.gameObject); //free up some memory
+        col.gameObject.transform.parent.gameObject.SetActive(false);
+
     }
 
 }

@@ -11,7 +11,8 @@ public class LoadScene : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        Invoke("LoadGame",3f);
+        Invoke("LoadGame",4f);
+
 	}
 	
 	// Update is called once per frame
