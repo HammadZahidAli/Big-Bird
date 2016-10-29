@@ -14,7 +14,7 @@ public class SplashScreen : MonoBehaviour {
         //fadein();
         yield return new WaitForSeconds(0f);
        // fadeout();
-        yield return new WaitForSeconds(2f);
+       // yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(LoadScene);
         //SceneManager.LoadSceneAsync(LoadScene);

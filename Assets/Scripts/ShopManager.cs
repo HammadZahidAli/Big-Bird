@@ -17,7 +17,7 @@ public class ShopManager : MonoBehaviour {
     public Sprite[] spriteBird;
 
     //Bird Selection System
-    public static int selectedbird=1;
+//    public static int selectedbird=1;
 
     //Products
     public GameObject[] selectButtons;
@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour {
     {
         //PlayerPrefs.DeleteAll();
         //GameOverManager.totalScore = 3000;
-        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
+        Constants.totalScore = PlayerPrefs.GetInt("totalScore");
         product2 = PlayerPrefs.GetInt("purchase2");
         product3 = PlayerPrefs.GetInt("purchase3");
         product4 = PlayerPrefs.GetInt("purchase4");
@@ -72,7 +72,7 @@ public class ShopManager : MonoBehaviour {
             selectButtons[9].GetComponent<Image>().sprite = spriteSelect;
 
         showSelectedbird.GetComponent<Image>().sprite = spriteBird[0];
-        selectedbird = 1;
+        Constants.selectedbird = 1;
 
     }
 
@@ -80,13 +80,13 @@ public class ShopManager : MonoBehaviour {
     {
         if(product2 == 0) {
 
-            if (GameOverManager.totalScore >= 300)
+            if (Constants.totalScore >= 300)
             {
                 textCongo.SetActive(true);
                 selectButtons[2].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[2].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 300;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 300;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase2", 1);
                 PlayerPrefs.Save();
                 product2 = 1;
@@ -118,7 +118,7 @@ public class ShopManager : MonoBehaviour {
             if (product9 == 1)
                 selectButtons[9].GetComponent<Image>().sprite = spriteSelect;
 
-            selectedbird = 2;
+            Constants.selectedbird = 2;
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[1];
         }
     }
@@ -128,13 +128,13 @@ public class ShopManager : MonoBehaviour {
         if (product3 == 0)
         {
 
-            if (GameOverManager.totalScore >= 500)
+            if (Constants.totalScore >= 500)
             {
                 textCongo.SetActive(true);
                 selectButtons[3].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[3].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 500;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 500;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase3", 1);
                 PlayerPrefs.Save();
                 product3 = 1;
@@ -163,7 +163,7 @@ public class ShopManager : MonoBehaviour {
                 selectButtons[8].GetComponent<Image>().sprite = spriteSelect;
             if (product9 == 1)
                 selectButtons[9].GetComponent<Image>().sprite = spriteSelect;
-            selectedbird = 3;
+            Constants.selectedbird = 3;
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[2];
         }
     }
@@ -173,14 +173,14 @@ public class ShopManager : MonoBehaviour {
         if (product4 == 0)
         {
 
-            if (GameOverManager.totalScore >= 700)
+            if (Constants.totalScore >= 700)
             {
                 textCongo.SetActive(true);
                 selectButtons[4].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[4].transform.GetChild(0).gameObject.SetActive(false);
-               // selectButtons[4].GetComponentInChildren<Text>().enabled = false;
-                GameOverManager.totalScore -= 700;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                // selectButtons[4].GetComponentInChildren<Text>().enabled = false;
+                Constants.totalScore -= 700;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase4", 1);
                 PlayerPrefs.Save();
                 product4 = 1;
@@ -195,7 +195,7 @@ public class ShopManager : MonoBehaviour {
         {
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[3];
 
-            selectedbird = 4;
+            Constants.selectedbird = 4;
             selectButtons[4].GetComponent<Image>().sprite = spriteSelected;
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
@@ -221,14 +221,14 @@ public class ShopManager : MonoBehaviour {
         if (product5 == 0)
         {
 
-            if (GameOverManager.totalScore >= 900)
+            if (Constants.totalScore >= 900)
             {
                 textCongo.SetActive(true);
                 selectButtons[5].GetComponent<Image>().sprite = spriteSelect;
                 
                 selectButtons[5].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 900;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 900;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase5", 1);
                 PlayerPrefs.Save();
                 product5 = 1;
@@ -243,7 +243,7 @@ public class ShopManager : MonoBehaviour {
         else
         {
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[4];
-            selectedbird = 5;
+            Constants.selectedbird = 5;
             selectButtons[5].GetComponent<Image>().sprite = spriteSelected;
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
@@ -268,14 +268,14 @@ public class ShopManager : MonoBehaviour {
         if (product6 == 0)
         {
 
-            if (GameOverManager.totalScore >= 1300)
+            if (Constants.totalScore >= 1300)
             {
                 
                 textCongo.SetActive(true);
                 selectButtons[6].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[6].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 1300;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 1300;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase6", 1);
                 PlayerPrefs.Save();
                 product6 = 1;
@@ -289,7 +289,7 @@ public class ShopManager : MonoBehaviour {
         else
         {
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[5];
-            selectedbird = 6;
+            Constants.selectedbird = 6;
             selectButtons[6].GetComponent<Image>().sprite = spriteSelected;
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
@@ -314,13 +314,13 @@ public class ShopManager : MonoBehaviour {
         if (product7 == 0)
         {
 
-            if (GameOverManager.totalScore >= 1500)
+            if (Constants.totalScore >= 1500)
             {
                 textCongo.SetActive(true);
                 selectButtons[7].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[7].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 1500;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 1500;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase7", 1);
                 PlayerPrefs.Save();
                 product7 = 1;
@@ -335,7 +335,7 @@ public class ShopManager : MonoBehaviour {
         else
         {
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[6];
-            selectedbird = 7;
+            Constants.selectedbird = 7;
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
                 selectButtons[3].GetComponent<Image>().sprite = spriteSelect;
@@ -360,13 +360,13 @@ public class ShopManager : MonoBehaviour {
         if (product8 == 0)
         {
 
-            if (GameOverManager.totalScore >= 1500)
+            if (Constants.totalScore >= 1500)
             {
                 textCongo.SetActive(true);
                 selectButtons[8].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[8].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 1500;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 1500;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase8", 1);
                 PlayerPrefs.Save();
                 product8 = 1;
@@ -381,7 +381,7 @@ public class ShopManager : MonoBehaviour {
         }
         else
         {
-            selectedbird = 8;
+            Constants.selectedbird = 8;
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[7];
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
@@ -407,13 +407,13 @@ public class ShopManager : MonoBehaviour {
         if (product9 == 0)
         {
 
-            if (GameOverManager.totalScore >= 1700)
+            if (Constants.totalScore >= 1700)
             {
                 textCongo.SetActive(true);
                 selectButtons[9].GetComponent<Image>().sprite = spriteSelect;
                 selectButtons[9].transform.GetChild(0).gameObject.SetActive(false);
-                GameOverManager.totalScore -= 1700;
-                PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                Constants.totalScore -= 1700;
+                PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                 PlayerPrefs.SetInt("purchase9", 1);
                 PlayerPrefs.Save();
                 product9 = 1;
@@ -428,7 +428,7 @@ public class ShopManager : MonoBehaviour {
         else
         {
             showSelectedbird.GetComponent<Image>().sprite = spriteBird[8];
-            selectedbird = 9;
+            Constants.selectedbird = 9;
             selectButtons[1].GetComponent<Image>().sprite = spriteSelect;
             if (product3 == 1)
                 selectButtons[3].GetComponent<Image>().sprite = spriteSelect;
@@ -463,11 +463,11 @@ public class ShopManager : MonoBehaviour {
     }
 
     
-    public static bool coinsAdsbool=false;
+   // public static bool coinsAdsbool=false;
     // Advertisement Coins Free
     public void OnClickWatchtoAddCoins()
     {
-        ShopManager.coinsAdsbool = true;
+        Constants.coinsAdsbool = true;
        
         UnityAdsManager.Instance.ShowRewardedVideoAd();
     }

@@ -5,6 +5,7 @@ using Keyur.Components.ObjectPooling;
 
 public class SpawnerScript : MonoBehaviour
 {
+    GameObject go;
     ObjectPoolerSimple objectPool;
     void Start()
     {
@@ -13,6 +14,7 @@ public class SpawnerScript : MonoBehaviour
         hurdleIndex = 0;
         SpawnObject = SpawnObjects[hurdleIndex];
         Spawn();
+      
     }
     public float p;
     void Spawn()
@@ -20,9 +22,9 @@ public class SpawnerScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Playing)
         {
             //random y position
-            float y = Random.Range(-0.4f, 3.3f);
+            float y = Random.Range(0f, 3.3f);
             //GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
-            GameObject go = objectPool.GetPooledObject();
+            go = objectPool.GetPooledObject();
             go.SetActiveRecursively(true);
             go.transform.position = new Vector3( transform.position.x, y, transform.position.z);
             go.SetActive(true);

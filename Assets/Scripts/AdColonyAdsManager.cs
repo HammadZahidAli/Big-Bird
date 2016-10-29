@@ -22,7 +22,7 @@ public class AdColonyAdsManager : SingeltonBase<AdColonyAdsManager>
         AdColony.OnVideoFinished = this.OnVideoFinished;
 
         AdColony.OnV4VCResult = this.OnV4VCResult;
-
+        
 
         // If you wish to use a the customID feature, you should call  that now.
         // Then, configure AdColony:
@@ -90,11 +90,12 @@ public class AdColonyAdsManager : SingeltonBase<AdColonyAdsManager>
         {
             Debug.Log("V4VC SUCCESS: name = " + name + ", amount = " + amount);
             //TimerManager.RewardTime = true;
-            ShopManager.coinsAdsbool = false;
-            GameOverManager.totalScore += 20;
-           
-            PlayerPrefs.SetInt("totalscore", GameOverManager.totalScore);
-            PlayerPrefs.Save();
+            Constants.coinsAdsbool = false;
+            Constants.totalScore += 20;
+
+            //PlayerPrefs.SetInt("totalscore", Constants.totalScore);
+            //PlayerPrefs.Save();
+            Constants.SavePrefs();
         }
         else
         {

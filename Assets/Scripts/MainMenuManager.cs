@@ -19,12 +19,16 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     void InvokePopup()
     {
-        o1.SetActive(true);
-        o2.SetActive(true);
-        o3.SetActive(true);
 
-        int n = Random.Range(1, 3);
         panel.SetActive(true);
+        o1.SetActive(false);
+        o2.SetActive(false);
+        o3.SetActive(false);
+
+
+        
+        n = Random.Range(1, 4);
+
         switch (n)
         {
             case 1:
@@ -42,12 +46,18 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     }
 
+    int n=2;
+
     public string adBuddizKey;
     void Start () {
         AdBuddizBinding.SetAndroidPublisherKey(adBuddizKey);
         AdBuddizBinding.CacheAds();
+       // AdBuddizBinding.RewardedVideo.Fetch();
 
-        
+        //AdBuddizBinding.SetTestModeActive();
+
+
+  
         MenuHome ();
 
        
@@ -241,7 +251,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         //	"delay", 0.0f,
         //	"easetype",	iTween.EaseType.spring,
         //	"time", 1.0f));
-
+        
         StartCoroutine(MenuGameOverHide(0));
 	}
 	
@@ -251,12 +261,12 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		GameOverPanel.SetActive(false);
 
        
-        //SceneManager.LoadScene (1);
-
-       
-        SceneManager.LoadScene("Loading");//MainGame
+        SceneManager.LoadScene("Loading");
+        
         GameStateManager.GameState = GameState.Intro;
+       
         SoundManager.Instance.PlayMusicGame();
+        
 
     }
 

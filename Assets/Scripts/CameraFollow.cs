@@ -14,23 +14,23 @@ public class CameraFollow : MonoBehaviour {
         cameraZ = transform.position.z;
 
 
-        if (ShopManager.selectedbird == 1)
+        if (Constants.selectedbird == 1)
         { birds[0].SetActive(true); Player = birds[0].transform; }
-        else if (ShopManager.selectedbird == 2)
+        else if (Constants.selectedbird == 2)
         { birds[1].SetActive(true); Player = birds[1].transform; }
-        else if (ShopManager.selectedbird == 3)
+        else if (Constants.selectedbird == 3)
         { birds[2].SetActive(true); Player = birds[2].transform; }
-        else if (ShopManager.selectedbird == 4)
+        else if (Constants.selectedbird == 4)
         { birds[3].SetActive(true); Player = birds[3].transform; }
-        else if (ShopManager.selectedbird == 5)
+        else if (Constants.selectedbird == 5)
         { birds[4].SetActive(true); Player = birds[4].transform; }
-        else if (ShopManager.selectedbird == 6)
+        else if (Constants.selectedbird == 6)
         { birds[5].SetActive(true); Player = birds[5].transform; }
-        else if (ShopManager.selectedbird == 7)
+        else if (Constants.selectedbird == 7)
         { birds[6].SetActive(true); Player = birds[6].transform; }
-        else if (ShopManager.selectedbird == 8)
+        else if (Constants.selectedbird == 8)
         { birds[7].SetActive(true); Player = birds[7].transform; }
-        else if (ShopManager.selectedbird == 9)
+        else if (Constants.selectedbird == 9)
         { birds[8].SetActive(true); Player = birds[8].transform; }
     }
 

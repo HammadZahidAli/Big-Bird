@@ -83,22 +83,26 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 		{
 		case ShowResult.Finished:
                 
-                if (ShopManager.coinsAdsbool)
+                if (Constants.coinsAdsbool)
                 {
-                    ShopManager.coinsAdsbool = false;
+                    Constants.coinsAdsbool = false;
 
-                    GameOverManager.totalScore += 20;
+                    Constants.LoadPrefs();
 
-                    PlayerPrefs.SetInt("totalscore", GameOverManager.totalScore);
-                    PlayerPrefs.Save();
+                    Constants.totalScore += 30;
+
+                    // PlayerPrefs.SetInt("totalscore", Constants.totalScore);
+                    // PlayerPrefs.Save();
+
+                    Constants.SavePrefs();
 
                     Instantiate(successDialog, successDialog.transform.position, Quaternion.identity);
                     return;
                 }
                 else
                 {
-                    GameOverManager.revive = true;
-                    GameOverManager.temScore = ScoreManagerScript.Score;
+                    Constants.revive = true;
+                    Constants.temScore = ScoreManagerScript.Score;
 
                     MainMenuManager.Instance.RestartEvent();
 
@@ -110,15 +114,15 @@ public class UnityAdsManager : SingeltonBase<UnityAdsManager> {
 			break;
 		case ShowResult.Failed:
                 Debug.LogWarning("Video failed.");
-                if (ShopManager.coinsAdsbool)
+                if (Constants.coinsAdsbool)
                 {
-                    ShopManager.coinsAdsbool = false;
+                    Constants.coinsAdsbool = false;
                     Instantiate(FailureDialog, FailureDialog.transform.position, Quaternion.identity);
                 }
                 else
                 {
-                    GameOverManager.totalScore += ScoreManagerScript.Score;
-                    PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+                    Constants.totalScore += ScoreManagerScript.Score;
+                    PlayerPrefs.SetInt("totalScore", Constants.totalScore);
                     Instantiate(FailureDialog, FailureDialog.transform.position, Quaternion.identity);
                 }
                 Debug.LogError ("Video failed to show.");

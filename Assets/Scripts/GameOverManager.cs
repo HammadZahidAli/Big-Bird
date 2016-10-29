@@ -12,26 +12,23 @@ public class GameOverManager : MonoBehaviour {
 
     public Text scoreText;
     public Text highScoreText;
-    
-    public static int highScore;
-    public static int totalScore;
-    public static bool revive;
-    public static int temScore;
-    public static int count = 1;
 
-	// Use this for initialization
-	void Start () {
+    // public static int highScore;
+    // public static int totalScore;
+   // public static bool revive;
+   // public static int temScore;
+    //public static int count = 2;
+
+    // Use this for initialization
+    void Start () {
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
   {
-    { "bird", ShopManager.selectedbird },
-    { "coins", GameOverManager.temScore }
+    { "bird", Constants.selectedbird },
+    { "coins", Constants.temScore }
   
   });
 
-        //if (count % 2 == 0)
-       
 
-       // count++;
     }
     // Reference the Collections Generic namespace
 
@@ -45,38 +42,46 @@ int totalCoins = 100;
 
         scoreText.text = ScoreManagerScript.Score.ToString();
 
-       // Debug.Log("total: "+ totalScore);
+        // Debug.Log("total: "+ totalScore);
 
-        totalScore = PlayerPrefs.GetInt("totalScore");
-        highScore = PlayerPrefs.GetInt("highScore");
+        //Constants.totalScore = PlayerPrefs.GetInt("totalScore");
+        //Constants.highScore = PlayerPrefs.GetInt("highScore");
+        Constants.LoadPrefs();
 
-        if(ScoreManagerScript.Score > highScore)
+
+        if(ScoreManagerScript.Score > Constants.highScore)
         {
-            highScore = ScoreManagerScript.Score;
-            
+            Constants.highScore = ScoreManagerScript.Score;
+            OnClickPosttoLeaderboard();
+
+
         }
-        highScoreText.text = highScore.ToString();
-        totalScore += ScoreManagerScript.Score;
+        highScoreText.text = Constants.highScore.ToString();
+        Constants.totalScore += ScoreManagerScript.Score;
 
-        PlayerPrefs.SetInt("highScore", highScore);
-        PlayerPrefs.SetInt("totalScore", totalScore);
-        PlayerPrefs.Save();
-
+        //PlayerPrefs.SetInt("highScore", Constants.highScore);
+        //PlayerPrefs.SetInt("totalScore", Constants.totalScore);
+        //PlayerPrefs.Save();
+        Constants.SavePrefs();
         
         Invoke("Do",1f);
 
-        count++;
+        Constants.count++;
     }
 
     void Do()
     {
 
-        if (count % 6 == 0)
-            UnityAdsManager.Instance.ShowVideoAd();
+        //if (Constants.count % 10 == 0)
+           // UnityAdsManager.Instance.ShowVideoAd();
 
-
-        AdBuddizBinding.ShowAd();
-
+       if (Constants.count % 3 == 0)
+        {
+            //   AdMobAds.Instance.showInterstitial();
+            AdBuddizBinding.ShowAd();
+        }
+           
+          
         
     }
 
@@ -86,41 +91,45 @@ int totalCoins = 100;
 
     public void OnClickPosttoLeaderboard()
     {
-        LeaderboardManager.ReportScore(highScore);
+        // LeaderboardManager.ReportScore(Constants.highScore);
+       //LeaderboardController.Instance.LogIn();
+       LeaderboardController.Instance.OnAddScoreToLeaderBorad();
     }
 
     //On Coins Revive
     public void OnClick50Coins()
     {
-        totalScore -= ScoreManagerScript.Score;
-        if (totalScore >= 10)
+        Constants.totalScore -= ScoreManagerScript.Score;
+        if (Constants.totalScore >= 10)
         {
-            totalScore -= 10;
-            PlayerPrefs.SetInt("totalScore", totalScore);
-            revive = true;
-            temScore = ScoreManagerScript.Score;
-            Debug.Log("score:"+temScore);
+            Constants.totalScore -= 10;
+            // PlayerPrefs.SetInt("totalScore", Constants.totalScore);
+            Constants.SavePrefs();
+            Constants.revive = true;
+            Constants.temScore = ScoreManagerScript.Score;
+            //Debug.Log("score:"+temScore);
             MainMenuManager.Instance.RestartEvent();
-            PlayerPrefs.Save();
+            //PlayerPrefs.Save();
             
         }
         else
-            totalScore += ScoreManagerScript.Score;
+            Constants.totalScore += ScoreManagerScript.Score;
 
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
 
     }
 
 
     public void OnClickAd()
     {
-        totalScore -= ScoreManagerScript.Score;
-        PlayerPrefs.SetInt("totalScore", totalScore);
+        Constants.totalScore -= ScoreManagerScript.Score;
+       // PlayerPrefs.SetInt("totalScore", Constants.totalScore);
+        Constants.SavePrefs();
 
         //Application.LoadLevel(Application.loadedLevel);
         UnityAdsManager.Instance.ShowRewardedVideoAd();
 
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
     }
 
 

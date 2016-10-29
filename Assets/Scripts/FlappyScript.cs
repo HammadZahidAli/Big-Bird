@@ -23,12 +23,11 @@ public class FlappyScript : MonoBehaviour
 
         anim = this.GetComponent<Animator>();
         anim.enabled = true;
-        anim.SetInteger("selected", ShopManager.selectedbird);
+        anim.SetInteger("selected", Constants.selectedbird);
 
         Invoke("Loop",0.5f);
-       // Debug.Log("bool:" + GameOverManager.revive + GameOverManager.temScore);
-        ScoreManagerScript.Score = GameOverManager.temScore;
-        GameOverManager.temScore = 0;
+        ScoreManagerScript.Score = Constants.temScore;
+        Constants.temScore = 0;
     }
 
    void Loop()
@@ -56,9 +55,10 @@ public class FlappyScript : MonoBehaviour
             MoveBirdOnXAxis();
             if (WasTouchedOrClicked())
             {
+                IntroGUI.SetActive(false);
                 BoostOnYAxis();
                 GameStateManager.GameState = GameState.Playing;
-                IntroGUI.SetActive(false);
+                
                
 
                 

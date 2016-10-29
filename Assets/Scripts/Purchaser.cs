@@ -225,8 +225,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
             // The consumable item has been successfully purchased, add 100 coins to the player's in-game score.
             //ScoreManager.score += 100;
-            GameOverManager.totalScore += 500;
-            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            Constants.totalScore += 500;
+            PlayerPrefs.SetInt("totalScore", Constants.totalScore);
             PlayerPrefs.Save();
         }
         // Or ... a non-consumable product has been purchased by this user.
@@ -234,8 +234,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
         {
             //Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{1}'", args.purchasedProduct.definition.id));
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            GameOverManager.totalScore += 1000;
-            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            Constants.totalScore += 1000;
+            PlayerPrefs.SetInt("totalScore", Constants.totalScore);
             PlayerPrefs.Save();
 
         }
@@ -243,8 +243,8 @@ public class Purchaser : MonoBehaviour, IStoreListener
         else if (String.Equals(args.purchasedProduct.definition.id, product_3, StringComparison.Ordinal))
         {
             Debug.Log(string.Format("ProcessPurchase: PASS. Product: '{0}'", args.purchasedProduct.definition.id));
-            GameOverManager.totalScore += 2000;
-            PlayerPrefs.SetInt("totalScore", GameOverManager.totalScore);
+            Constants.totalScore += 2000;
+            PlayerPrefs.SetInt("totalScore", Constants.totalScore);
             PlayerPrefs.Save();
         }
         // Or ... an unknown product has been purchased by this user. Fill in additional products here....

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using Facebook.Unity;
 using Facebook.MiniJSON;
 using System.Linq;
+
+//using Trans;
 namespace GS
 {
     public class FBManager : MonoBehaviour
@@ -129,9 +131,13 @@ namespace GS
 
             });
         }
+
+        
         void PostOnlyIfPermitted()
         {
-            var scoreData = new Dictionary<string, string>() { { "score", scoreInputField.textComponent.text } };
+            Trans.Transfer t = new Trans.Transfer();
+            Debug.Log("Score: "+ t.HighScore());
+            var scoreData = new Dictionary<string, string>() { { "score", t.HighScore()+"" } }; //scoreInputField.textComponent.text
             FB.API("/me/scores", HttpMethod.POST, delegate (IGraphResult r)
             {
                 if (!r.Cancelled || r.Error != null)

@@ -5,11 +5,27 @@ namespace GS
     {
         //This is a dummy Score
         public static int userScore = 100;
-        public const string shareDialogTitle = "Amazing Example",
+        public const string shareDialogTitle = "Big Bird Journey",
             shareDialogMsg = "This is a Superb Owesome Game! Check this Out.",
-            inviteDialogTitle = "Amazing Example",
+            inviteDialogTitle = "Lets Play Play and Win",
             inviteDialogMsg = "Let's Play this Great Fun Game!";
-        public static Uri fbShareURI = new Uri("http://u3d.as/aRQ"),
-                fbSharePicURI = new Uri("http://i.imgur.com/fPs7tnx.png");
+        public static Uri fbShareURI = new Uri("https://play.google.com/store/apps/details?id=com.gamesfort.bigbird"),
+                fbSharePicURI = new Uri("http://i.imgur.com/ZaWulSh.png");
+
+
+        public static int highScore;
+
+    }
+}
+namespace Trans
+{
+
+    public class Transfer
+    {
+        public int  HighScore()
+        {
+           GS.Constants.highScore =Constants.highScore;
+            return Constants.highScore;
+        }
     }
 }

@@ -40,34 +40,46 @@ public class SoundManager : SingeltonBase<SoundManager> {
 
         if (PlayerPrefs.GetInt("firstTime") == 0)
         {
-            UpdateHighScore.currentSoundState = 1;
+            Constants.currentSoundState = 1;
             PlayerPrefs.SetInt("firstTime", 1);
             PlayerPrefs.SetInt("currentSoundState", 1);
             PlayerPrefs.Save();
         }
 
-        UpdateHighScore.currentSoundState = PlayerPrefs.GetInt("currentSoundState");
+        // Constants.currentSoundState = PlayerPrefs.GetInt("currentSoundState");
+        Constants.LoadPrefs();
 
-        if(UpdateHighScore.currentSoundState == 1)
+
+        if(Constants.currentSoundState == 1)
         {
 
-            SoundManager.Instance.musicSource.mute = false;
-            SoundManager.Instance.audioSource.mute = false;
-            SoundManager.Instance.playerAudioSource.mute = false;
+            //SoundManager.Instance.musicSource.mute = false;
+            //SoundManager.Instance.audioSource.mute = false;
+            //SoundManager.Instance.playerAudioSource.mute = false;
+            SoundOnOff(false);
         }
         else
         {
-            SoundManager.Instance.musicSource.mute = true;
-            SoundManager.Instance.audioSource.mute = true;
-            SoundManager.Instance.playerAudioSource.mute = true;
+            //SoundManager.Instance.musicSource.mute = true;
+            //SoundManager.Instance.audioSource.mute = true;
+            //SoundManager.Instance.playerAudioSource.mute = true;
+            SoundOnOff(true);
         }
 
-        GameOverManager.totalScore = PlayerPrefs.GetInt("totalScore");
-        GameOverManager.highScore = PlayerPrefs.GetInt("highScore");
+        Constants.LoadPrefs();
+        //Constants.totalScore = PlayerPrefs.GetInt("totalScore");
+        //Constants.highScore = PlayerPrefs.GetInt("highScore");
 
  
         PlayMenuMusic();
 	}
+
+    public void SoundOnOff(bool bit)
+    {
+        SoundManager.Instance.musicSource.mute = bit;
+        SoundManager.Instance.audioSource.mute = bit;
+        SoundManager.Instance.playerAudioSource.mute = bit;
+    }
 
 	// this method may be called from the outside 
 	// to start the menu music
