@@ -72,17 +72,19 @@ int totalCoins = 100;
     void Do()
     {
 
-        //if (Constants.count % 10 == 0)
-           // UnityAdsManager.Instance.ShowVideoAd();
+        if (Constants.count % 10 == 0)
+            UnityAdsManager.Instance.ShowVideoAd();
 
        if (Constants.count % 3 == 0)
         {
-            //   AdMobAds.Instance.showInterstitial();
-            AdBuddizBinding.ShowAd();
-        }
+            AdMobAds.Instance.showInterstitial();
            
-          
-        
+        }
+       else if(Constants.count % 4 ==0)
+             AdBuddizBinding.ShowAd();
+
+
+
     }
 
 

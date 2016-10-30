@@ -71,6 +71,7 @@ public class FlappyScript : MonoBehaviour
             MoveBirdOnXAxis();
             if (WasTouchedOrClicked())
             {
+                IntroGUI.SetActive(false);
                 BoostOnYAxis();
             }
 
