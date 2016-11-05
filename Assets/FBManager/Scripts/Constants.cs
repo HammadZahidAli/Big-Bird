@@ -1,5 +1,5 @@
 ﻿using System;
-namespace GS
+namespace Gs
 {
     public class Constants
     {
@@ -24,7 +24,7 @@ namespace Trans
     {
         public int  HighScore()
         {
-           GS.Constants.highScore =Constants.highScore;
+           Gs.Constants.highScore =Constants.highScore;
             return Constants.highScore;
         }
     }

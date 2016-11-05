@@ -37,20 +37,31 @@ public class UpdateHighScore : MonoBehaviour {
        
     }
 
+    public GameObject LeaderboardObject;
     public void OnClickShowLeaderBoard()
     {
         //LeaderboardManager.ShowLeaderboardUI();
-        LeaderboardController.Instance.LogIn();
-        LeaderboardController.Instance.OnShowLeaderBoard();
+        //LeaderboardController.Instance.LogIn();
+        //LeaderboardController.Instance.OnShowLeaderBoard();
+        GetComponent<APIManager>().FacebookConnect_bttn();
+
+        Invoke("OnLeaderboard",3f);
+        LeaderboardObject.SetActive(true);
     }
 
+    void OnLeaderboard()
+    {
+        
+        GetComponent<Leaderboards>().GetLeaderboard();
+        //FBCanvas.GetComponent<Canvas>().enabled = true;
+    }
 
     public GameObject FBCanvas;
     public void OnClickFBLeaderboard()
     {
         FBCanvas = GameObject.FindGameObjectWithTag("FBCanvas");
         //FBCanvas.SetActive(true);
-        FBCanvas.GetComponent<Canvas>().enabled = true;
+        
     }
 
 

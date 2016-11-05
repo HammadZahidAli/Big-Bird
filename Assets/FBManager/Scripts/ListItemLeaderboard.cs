@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-namespace GS
+namespace Gs
 {
     //Class that holds items for Our Custom dynamic Leaderboard ListView
     public class ListItemLeaderboard : MonoBehaviour

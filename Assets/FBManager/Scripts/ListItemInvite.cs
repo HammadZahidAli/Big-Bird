@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-namespace GS
+namespace Gs
 {
     public class ListItemInvite : MonoBehaviour
     {

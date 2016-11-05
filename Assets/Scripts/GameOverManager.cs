@@ -39,7 +39,7 @@ int totalCoins = 100;
 
     void OnEnable()
     {
-
+        OnClickPosttoLeaderboard();
         scoreText.text = ScoreManagerScript.Score.ToString();
 
         // Debug.Log("total: "+ totalScore);
@@ -52,10 +52,11 @@ int totalCoins = 100;
         if(ScoreManagerScript.Score > Constants.highScore)
         {
             Constants.highScore = ScoreManagerScript.Score;
+
             OnClickPosttoLeaderboard();
 
-
         }
+        
         highScoreText.text = Constants.highScore.ToString();
         Constants.totalScore += ScoreManagerScript.Score;
 
@@ -94,8 +95,9 @@ int totalCoins = 100;
     public void OnClickPosttoLeaderboard()
     {
         // LeaderboardManager.ReportScore(Constants.highScore);
-       //LeaderboardController.Instance.LogIn();
-       LeaderboardController.Instance.OnAddScoreToLeaderBorad();
+        //LeaderboardController.Instance.LogIn();
+        //LeaderboardController.Instance.OnAddScoreToLeaderBorad();
+        MainMenuManager.Instance.postScore("1", Constants.highScore);
     }
 
     //On Coins Revive

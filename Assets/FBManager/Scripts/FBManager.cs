@@ -8,7 +8,7 @@ using Facebook.MiniJSON;
 using System.Linq;
 
 //using Trans;
-namespace GS
+namespace Gs
 {
     public class FBManager : MonoBehaviour
     {
@@ -114,7 +114,7 @@ namespace GS
 
         public void GetPublishPermission()
         {
-            FB.LogInWithPublishPermissions(publishPermission,
+            Facebook.Unity.FB.LogInWithPublishPermissions(publishPermission,
             delegate (ILoginResult loginResult)
             {
                 if (AccessToken.CurrentAccessToken.Permissions.Contains(publishPermission[0]))
@@ -138,7 +138,7 @@ namespace GS
             Trans.Transfer t = new Trans.Transfer();
             Debug.Log("Score: "+ t.HighScore());
             var scoreData = new Dictionary<string, string>() { { "score", t.HighScore()+"" } }; //scoreInputField.textComponent.text
-            FB.API("/me/scores", HttpMethod.POST, delegate (IGraphResult r)
+            Facebook.Unity.FB.API("/me/scores", HttpMethod.POST, delegate (IGraphResult r)
             {
                 if (!r.Cancelled || r.Error != null)
                 {
@@ -157,7 +157,7 @@ namespace GS
 
         void GetFBScoreOfCurrentUser()
         {
-            FB.API("me/score?fields=score", HttpMethod.GET, delegate (IGraphResult result)
+            Facebook.Unity.FB.API("me/score?fields=score", HttpMethod.GET, delegate (IGraphResult result)
             {
                 if (string.IsNullOrEmpty(result.Error) && !result.Cancelled)
                 {
@@ -169,7 +169,7 @@ namespace GS
                         Dictionary<string, object> JSON = Json.Deserialize(result.RawResult) as Dictionary<string, object>;
                         List<object> data = JSON["data"] as List<object>;
 
-                        highScoreFacebook= int.Parse(Convert.ToString(((Dictionary<string, object>)data[0])["score"]));
+                        highScoreFacebook = int.Parse(Convert.ToString(((Dictionary<string, object>)data[0])["score"]));
                         print(highScoreFacebook);
                         ShareScoreOverFacebook();
                     }
@@ -188,7 +188,7 @@ namespace GS
         {
             leaderboardLoading.SetActive(true);
             ReloadLeaderboard();
-            FB.API(getScoreAPIString, HttpMethod.GET, CallBackLoadLeaderboard);
+            Facebook.Unity.FB.API(getScoreAPIString, HttpMethod.GET, this.CallBackLoadLeaderboard);
         }
         //callback of from Facebook API when the leaderboard data from the server is loaded.
         void CallBackLoadLeaderboard(IGraphResult result)
@@ -218,7 +218,7 @@ namespace GS
             }
             if (result.Error != null)
             {
-                FB.API(getScoreAPIString, HttpMethod.GET, CallBackLoadLeaderboard);
+                Facebook.Unity.FB.API(getScoreAPIString, HttpMethod.GET, this.CallBackLoadLeaderboard);
                 return;
             }
         }
@@ -226,7 +226,7 @@ namespace GS
         // Method to load Friends Profile Pictures
         void LoadFriendsAvatar(int index)
         {
-            FB.API(Util.GetPictureURL(listLeaderboard[index].fId), HttpMethod.GET, result =>
+            Facebook.Unity.FB.API(Util.GetPictureURL(listLeaderboard[index].fId), HttpMethod.GET, result =>
          {
              if (result.Error != null)
              {
@@ -276,14 +276,14 @@ namespace GS
             if (!inProcess)
             {
                 inProcess = true;
-                if (!FB.IsInitialized)
+                if (!Facebook.Unity.FB.IsInitialized)
                 {
-                    FB.Init(InitCallback, onHideUnity);
+                    Facebook.Unity.FB.Init(this.InitCallback, this.onHideUnity);
                 }
                 else
                 {
-                    FB.ActivateApp();
-                    if (FB.IsLoggedIn)
+                    Facebook.Unity.FB.ActivateApp();
+                    if (Facebook.Unity.FB.IsLoggedIn)
                     {
                         SetInfoText("Already Logged In.");
                         SetFacebookRelatedData();
@@ -298,7 +298,7 @@ namespace GS
         }
         private void InitCallback()
         {
-            if (FB.IsInitialized)
+            if (Facebook.Unity.FB.IsInitialized)
             {
                 WaitForSecAndCheck();
             }
@@ -327,7 +327,7 @@ namespace GS
         //Callback method of login
         void LoginCallback(ILoginResult result)
         {
-            if (FB.IsLoggedIn)
+            if (Facebook.Unity.FB.IsLoggedIn)
             {
                 // AccessToken class will have session details
                 //var aToken = AccessToken.CurrentAccessToken;
@@ -365,7 +365,7 @@ namespace GS
         // Remedy for A Facebook Plugin Bug that Returns False if Inquired about FB.IsLoggedIn in Call Back of FB.Init!
         void WaitForSecAndCheck()
         {
-            if (FB.IsLoggedIn)
+            if (Facebook.Unity.FB.IsLoggedIn)
             {
                 SetInfoText("Already Logged In.");
                 SetFacebookRelatedData();
@@ -379,21 +379,21 @@ namespace GS
         {
             yield return new WaitForSeconds(1f);
 
-            if (FB.IsLoggedIn)
+            if (Facebook.Unity.FB.IsLoggedIn)
             {
                 //Here you should be logged in
                 SetFacebookRelatedData();
             }
             else
             {
-                FB.ActivateApp();
-                FB.LogInWithReadPermissions(readPermission, LoginCallback);
+                Facebook.Unity.FB.ActivateApp();
+                Facebook.Unity.FB.LogInWithReadPermissions(readPermission, this.LoginCallback);
             }
 
         }
         public void LogoutFB()
         {
-            FB.LogOut();
+            Facebook.Unity.FB.LogOut();
             SetFBItems(false);
             ReloadLeaderboard();
             ReloadInvite();
@@ -433,9 +433,9 @@ namespace GS
                 Constants.shareDialogMsg + " My High Score is " + highScoreFacebook :
                 Constants.shareDialogMsg;
 
-                if (FB.IsLoggedIn)
+                if (Facebook.Unity.FB.IsLoggedIn)
                 {
-                    FB.ShareLink(
+                    Facebook.Unity.FB.ShareLink(
                         contentURL: Constants.fbShareURI,
                         contentTitle: Constants.shareDialogTitle,
                         contentDescription: shareDesc,
@@ -467,7 +467,7 @@ namespace GS
         {
             ReloadInvite();
             inviteLoading.SetActive(true);
-            FB.API(loadInvitableFriendsString, HttpMethod.GET, CallBackLoadInvitableFriends);
+            Facebook.Unity.FB.API(loadInvitableFriendsString, HttpMethod.GET, this.CallBackLoadInvitableFriends);
         }
         //Callback of Invitable Friends API Call
         void CallBackLoadInvitableFriends(IGraphResult result)
@@ -475,6 +475,8 @@ namespace GS
             //Deserializing JSON returned from server
             Dictionary<string, object> JSON = Json.Deserialize(result.RawResult) as Dictionary<string, object>;
             List<object> data = JSON["data"] as List<object>;
+
+
             //Loop to traverse and process all the items returned from the server.
             for (int i = 0; i < data.Count; i++)
             {
@@ -618,7 +620,7 @@ namespace GS
                     }
                 }
                 lstToSend.RemoveRange(0, invToSend.Length);
-                FB.AppRequest(
+                Facebook.Unity.FB.AppRequest(
                     Constants.inviteDialogMsg,
                     invToSend,
                     null,

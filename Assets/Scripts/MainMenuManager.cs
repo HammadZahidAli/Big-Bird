@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -346,4 +346,22 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 		
 	}
 
+
+
+
+    public void postScore(string levelName, int score)
+    {
+        Debug.Log("coming");
+        new GameSparks.Api.Requests.LogEventRequest_postScore().Set_score(score).Send((response) =>
+        {
+            if (response.HasErrors)
+            {
+                Debug.Log("Failed");
+            }
+            else
+            {
+                Debug.Log("Successful");
+            }
+        });
+    }
 }
