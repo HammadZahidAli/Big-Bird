@@ -39,7 +39,7 @@ int totalCoins = 100;
 
     void OnEnable()
     {
-        OnClickPosttoLeaderboard();
+        //OnClickPosttoLeaderboard();
         scoreText.text = ScoreManagerScript.Score.ToString();
 
         // Debug.Log("total: "+ totalScore);
@@ -76,13 +76,22 @@ int totalCoins = 100;
         if (Constants.count % 10 == 0)
             UnityAdsManager.Instance.ShowVideoAd();
 
-       if (Constants.count % 3 == 0)
+        if (Constants.count % 3 == 0)
         {
-            AdMobAds.Instance.showInterstitial();
-           
+           // AdMobAds.Instance.showInterstitial();
         }
-       else if(Constants.count % 4 ==0)
-             AdBuddizBinding.ShowAd();
+       else if(Constants.count % 2 == 0)
+        {
+            if (AdBuddizBinding.IsReadyToShowAd())
+            {
+                AdBuddizBinding.ShowAd();
+            }
+            else
+            {
+
+            }
+        }
+
 
 
 

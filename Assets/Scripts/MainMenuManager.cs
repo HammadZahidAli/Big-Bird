@@ -52,9 +52,9 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
     void Start () {
         AdBuddizBinding.SetAndroidPublisherKey(adBuddizKey);
         AdBuddizBinding.CacheAds();
-       // AdBuddizBinding.RewardedVideo.Fetch();
+        AdBuddizBinding.RewardedVideo.Fetch();
 
-        //AdBuddizBinding.SetTestModeActive();
+        AdBuddizBinding.SetTestModeActive();
 
 
   

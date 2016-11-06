@@ -7,17 +7,15 @@ public class LoadScene : MonoBehaviour {
     public string loadScene;
     void LoadGame()
     {
-       
         key = true;
        // SceneManager.LoadScene(loadScene);
     }
 	// Use this for initialization
 	void Start () {
+        if (Constants.count % 2 == 0)
+            AdMobAds.Instance.RequestInterstitial();
 
-        AdMobAds.Instance.RequestInterstitial();
-        Invoke("LoadGame",0f);
-
-
+        Invoke("LoadGame",1f);
     }
 
 

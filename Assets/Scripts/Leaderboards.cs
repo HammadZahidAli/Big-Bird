@@ -40,8 +40,9 @@ public class Leaderboards : MonoBehaviour {
                 items[i].GetComponent<LeaderboardEntry>().rankText.text = entry.Rank.ToString();
                 items[i].GetComponent<LeaderboardEntry>().userNameText.text = entry.UserName.ToString();
                 items[i].GetComponent<LeaderboardEntry>().scoreText.text = entry.GetNumberValue("score").ToString();
+                items[i].GetComponent<LeaderboardEntry>().facebookID = entry.ExternalIds.GetString("FB");
+                items[i].GetComponent<LeaderboardEntry>().GetPic();
 
-                
                 entries.Add(items[i]);
                 i++;
             }

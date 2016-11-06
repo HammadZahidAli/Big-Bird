@@ -11,7 +11,7 @@ public class UpdateHighScore : MonoBehaviour {
     void OnEnable()
     {
 
-       // AdBuddizRewardedVideoManager.didComplete += DidComplete;
+        AdBuddizRewardedVideoManager.didComplete += DidComplete;
 
         highScoreText.text = "High Score : " + Constants.highScore;
         totalScoreText.text = "Total Score : " + Constants.totalScore;
@@ -43,7 +43,7 @@ public class UpdateHighScore : MonoBehaviour {
         //LeaderboardManager.ShowLeaderboardUI();
         //LeaderboardController.Instance.LogIn();
         //LeaderboardController.Instance.OnShowLeaderBoard();
-        GetComponent<APIManager>().FacebookConnect_bttn();
+        //GetComponent<APIManager>().FacebookConnect_bttn();
 
         Invoke("OnLeaderboard",3f);
         LeaderboardObject.SetActive(true);
@@ -100,28 +100,28 @@ public class UpdateHighScore : MonoBehaviour {
     public void OnClickAdbuddizRewardedVideo()
     {
 
-        //AdBuddizBinding.RewardedVideo.Show();
+        AdBuddizBinding.RewardedVideo.Show();
         //AdColonyAdsManager.Instance.PlayV4VCAd();
 
 
-        Constants.coinsAdsbool = true;
-        UnityAdsManager.Instance.ShowRewardedVideoAd();
+        //unity ad
+        //Constants.coinsAdsbool = true;
+        //UnityAdsManager.Instance.ShowRewardedVideoAd();
     }
 
 
     void OnDisable()
     { // unregister as a listener
-       // AdBuddizRewardedVideoManager.didComplete -= DidComplete;
+       AdBuddizRewardedVideoManager.didComplete -= DidComplete;
     }
 
     void DidComplete()
     {
         // Give the reward
         Constants.coinsAdsbool = false;
-        Constants.totalScore = PlayerPrefs.GetInt("totalscore") + 50;
-        Debug.Log("total" + Constants.totalScore);
-        PlayerPrefs.SetInt("totalscore", Constants.totalScore);
-        PlayerPrefs.Save();
+        Constants.totalScore += 30;
+        //Debug.Log("total" + Constants.totalScore);
+        Constants.SavePrefs();
 
     }
 
