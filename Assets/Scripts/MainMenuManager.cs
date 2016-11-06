@@ -54,7 +54,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         AdBuddizBinding.CacheAds();
         AdBuddizBinding.RewardedVideo.Fetch();
 
-        AdBuddizBinding.SetTestModeActive();
+        //AdBuddizBinding.SetTestModeActive();
 
 
   

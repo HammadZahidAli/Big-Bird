@@ -75,20 +75,15 @@ int totalCoins = 100;
 
         if (Constants.count % 10 == 0)
             UnityAdsManager.Instance.ShowVideoAd();
-
-        if (Constants.count % 3 == 0)
+        else if (Constants.count % 3 == 0)
         {
-           // AdMobAds.Instance.showInterstitial();
+            AdMobAds.Instance.showInterstitial();
         }
        else if(Constants.count % 2 == 0)
         {
             if (AdBuddizBinding.IsReadyToShowAd())
             {
                 AdBuddizBinding.ShowAd();
-            }
-            else
-            {
-
             }
         }
 

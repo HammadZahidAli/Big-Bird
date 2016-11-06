@@ -46,7 +46,7 @@ public class LeaderboardEntry : MonoBehaviour {
 
         RawImage sr = GetComponentInChildren<RawImage>();
         sr.texture = tempPic;
-        sr.color = Color.white;
+        //sr.color = Color.white;
     }
 
 
