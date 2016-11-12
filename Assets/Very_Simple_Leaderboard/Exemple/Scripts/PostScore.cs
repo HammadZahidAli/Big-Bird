@@ -16,6 +16,7 @@ public class PostScore : MonoBehaviour
 	void OnClicked()
 	{
         Constants.LoadPrefs();
-		LeaderboardManager.ReportScore(Constants.highScore);
+		//LeaderboardManager.ReportScore(Constants.highScore);
+       
 	}
 }

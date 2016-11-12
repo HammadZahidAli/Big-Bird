@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 // Reference the Unity Analytics namespace
 using UnityEngine.Analytics;
+using UnityEngine.Advertisements; // Using the Unity Ads namespace.
+
 
 using AppAdvisory.social;
 
@@ -107,7 +109,10 @@ int totalCoins = 100;
     //On Coins Revive
     public void OnClick50Coins()
     {
+        //if(Constants.totalScore-10 >= 0)
         Constants.totalScore -= ScoreManagerScript.Score;
+        Debug.Log("score:"+ Constants.totalScore);
+
         if (Constants.totalScore >= 10)
         {
             Constants.totalScore -= 10;
@@ -123,6 +128,8 @@ int totalCoins = 100;
         else
             Constants.totalScore += ScoreManagerScript.Score;
 
+
+        Debug.Log("score:after " + Constants.totalScore);
         //PlayerPrefs.Save();
 
     }
@@ -130,14 +137,23 @@ int totalCoins = 100;
 
     public void OnClickAd()
     {
-        Constants.totalScore -= ScoreManagerScript.Score;
-       // PlayerPrefs.SetInt("totalScore", Constants.totalScore);
-        Constants.SavePrefs();
+       
+        if (Advertisement.isInitialized || Advertisement.IsReady())
+        {
+            if (Constants.totalScore > 0)
+            {
+                Constants.totalScore -= ScoreManagerScript.Score;
+                // PlayerPrefs.SetInt("totalScore", Constants.totalScore);
+                Constants.SavePrefs();
 
-        //Application.LoadLevel(Application.loadedLevel);
-        UnityAdsManager.Instance.ShowRewardedVideoAd();
+                //Application.LoadLevel(Application.loadedLevel);
+                UnityAdsManager.Instance.ShowRewardedVideoAd();
 
-        //PlayerPrefs.Save();
+                //PlayerPrefs.Save();
+            }
+
+        }
+
     }
 
 

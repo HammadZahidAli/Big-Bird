@@ -19,7 +19,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     void InvokePopup()
     {
-
+       // PlayerPrefs.DeleteAll();
         panel.SetActive(true);
         o1.SetActive(false);
         o2.SetActive(false);
