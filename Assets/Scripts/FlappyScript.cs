@@ -28,7 +28,17 @@ public class FlappyScript : MonoBehaviour
         Invoke("Loop",0.5f);
         ScoreManagerScript.Score = Constants.temScore;
         Constants.temScore = 0;
+
+        GameStateManager.GameState = GameState.Intro;
+        Invoke("SettheGame",  1f);
     }
+
+
+    void SettheGame()
+    {
+        loadingTime = true;
+    }
+
 
    void Loop()
     {
@@ -42,6 +52,8 @@ public class FlappyScript : MonoBehaviour
         GoingUp, GoingDown
     }
 
+
+    bool loadingTime = false;
     Vector3 birdRotation = Vector3.zero;
     // Update is called once per frame
     void Update()
@@ -53,17 +65,14 @@ public class FlappyScript : MonoBehaviour
         if (GameStateManager.GameState == GameState.Intro)
         {
             MoveBirdOnXAxis();
-            if (WasTouchedOrClicked())
+            if (WasTouchedOrClicked() && loadingTime)
             {
                 IntroGUI.SetActive(false);
                 BoostOnYAxis();
                 GameStateManager.GameState = GameState.Playing;
-                
-               
-
-                
+                loadingTime = false;        
             }
-
+           
         }
 
         else if (GameStateManager.GameState == GameState.Playing)
@@ -71,7 +80,7 @@ public class FlappyScript : MonoBehaviour
             MoveBirdOnXAxis();
             if (WasTouchedOrClicked())
             {
-                IntroGUI.SetActive(false);
+                //IntroGUI.SetActive(false);
                 BoostOnYAxis();
             }
 

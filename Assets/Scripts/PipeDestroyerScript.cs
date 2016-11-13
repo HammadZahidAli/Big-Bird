@@ -12,7 +12,8 @@ using UnityEngine;
 
         if (col.tag == "Pipe" || col.tag == "Pipeblank")
           //  Destroy(col.gameObject.transform.parent.gameObject); //free up some memory
-        col.gameObject.transform.parent.gameObject.SetActive(false);
+        //col.gameObject.transform.parent.gameObject.SetActive(false);
+        VersatileObjectPooler.instance.PoolObject(col.gameObject.transform.parent.gameObject);
 
     }
 

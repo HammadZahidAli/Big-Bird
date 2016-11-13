@@ -6,17 +6,19 @@ using Keyur.Components.ObjectPooling;
 public class SpawnerScript : MonoBehaviour
 {
     GameObject go;
-    ObjectPoolerSimple objectPool;
+    VersatileObjectPooler objectPool;
+
+
     void Start()
     {
-      //  objectPool = GetComponent<ObjectPoolerSimple>();
-        objectPool = GetComponent<ObjectPoolerSimple>();
-        hurdleIndex = 0;
-        SpawnObject = SpawnObjects[hurdleIndex];
+
+        //objectPool = GetComponent<ObjectPoolerSimple>();
+        objectPool = GetComponent<VersatileObjectPooler>();
         Spawn();
       
     }
     public float p;
+    string nextHurdle= "PipeStraight";
     void Spawn()
     {
         if (GameStateManager.GameState == GameState.Playing)
@@ -24,7 +26,8 @@ public class SpawnerScript : MonoBehaviour
             //random y position
             float y = Random.Range(0f, 3.3f);
             //GameObject go = Instantiate(SpawnObject, this.transform.position + new Vector3(0, y, 0), Quaternion.identity) as GameObject;
-            go = objectPool.GetPooledObject();
+            //go = objectPool.GetPooledObject();
+            go = VersatileObjectPooler.instance.GetObjectForType(nextHurdle, true, new Vector3(transform.position.x, y, transform.position.z));
             go.SetActiveRecursively(true);
             go.transform.position = new Vector3( transform.position.x, y, transform.position.z);
             go.SetActive(true);
@@ -33,9 +36,37 @@ public class SpawnerScript : MonoBehaviour
  
         
         Invoke("Spawn", p);
-        hurdleIndex++;
-        hurdleIndex = hurdleIndex % SpawnObjects.Length;
-        SpawnObject = SpawnObjects[hurdleIndex];
+        if (ScoreManagerScript.Score == 2)
+        {
+            nextHurdle = "PipeStraightDownMoving";
+        }
+        else if (ScoreManagerScript.Score == 4)
+        {
+            nextHurdle = "PipeStraightUpMoving";
+        }
+        else if (ScoreManagerScript.Score == 6)
+        {
+            nextHurdle = "PipeStraightMoving";
+        }
+        else if (ScoreManagerScript.Score == 8)
+        {
+            nextHurdle = "PipeStraightMovingBoth";
+        }
+        else if (ScoreManagerScript.Score > 12)
+        {
+            if (ScoreManagerScript.Score % 5 == 0)
+                nextHurdle = "PipeStraightMoving";
+            else if (ScoreManagerScript.Score % 10 == 0)
+            {
+                nextHurdle = "PipeStraightUpMoving";
+            }
+            else
+            {
+                nextHurdle = "PipeStraightMovingBoth";
+            }
+
+        }
+
     }
 
     private GameObject SpawnObject;

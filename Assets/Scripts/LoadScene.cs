@@ -15,7 +15,7 @@ public class LoadScene : MonoBehaviour {
         if (Constants.count % 2 == 0)
             AdMobAds.Instance.RequestInterstitial();
 
-        Invoke("LoadGame",1f);
+        Invoke("LoadGame",0f);
     }
 
 
