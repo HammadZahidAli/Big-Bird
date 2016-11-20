@@ -45,8 +45,9 @@ public class UpdateHighScore : MonoBehaviour {
         //LeaderboardController.Instance.OnShowLeaderBoard();
         //GetComponent<APIManager>().FacebookConnect_bttn();
         MainMenuManager.Instance.postScore("1", Constants.highScore);
-        Invoke("OnLeaderboard",3f);
         LeaderboardObject.SetActive(true);
+
+        Invoke("OnLeaderboard",3f);
     }
 
     void OnLeaderboard()

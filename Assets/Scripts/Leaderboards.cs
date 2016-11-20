@@ -10,40 +10,43 @@ public class Leaderboards : MonoBehaviour {
     public List<GameObject> entries = new List<GameObject>();
     public GameObject[] items;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public GameObject prefabEntry;
+    public GameObject MaskPanelImage;
 
+	// Use this for initialization
 
     public void GetLeaderboard()
     {
         for (int i = 0; i < entries.Count; i++)
         {
-            //Destroy(entries[i]);
+            if(entries[i]!=null)
+            Destroy(entries[i]);
         }
 
 
 
         entries.Clear();
 
-        new LeaderboardDataRequest_highScoreLeaderboard().SetEntryCount(10).Send((response) =>
+        new LeaderboardDataRequest_highScoreLeaderboard().SetEntryCount(30).Send((response) =>
         {
             int i = 0;
             foreach(var entry in response.Data)
             {
-                items[i].GetComponent<LeaderboardEntry>().rankText.text = entry.Rank.ToString();
-                items[i].GetComponent<LeaderboardEntry>().userNameText.text = entry.UserName.ToString();
-                items[i].GetComponent<LeaderboardEntry>().scoreText.text = entry.GetNumberValue("score").ToString();
-                items[i].GetComponent<LeaderboardEntry>().facebookID = entry.ExternalIds.GetString("FB");
-                items[i].GetComponent<LeaderboardEntry>().GetPic();
 
-                entries.Add(items[i]);
+                GameObject entryObj = Instantiate(prefabEntry) as GameObject;
+                entryObj.transform.SetParent(MaskPanelImage.transform, false);
+                LeaderboardEntry comp = entryObj.GetComponent<LeaderboardEntry>();
+
+                comp.rank = entry.Rank.ToString();
+                comp.userName = entry.UserName.ToString();
+                comp.score = entry.GetNumberValue("score").ToString();
+                comp.facebookID = entry.ExternalIds.GetString("FB");
+
+                comp.SetData(comp.rank, comp.userName, comp.score);
+                comp.GetPic();
+
+
+                entries.Add(entryObj);
                 i++;
             }
         });

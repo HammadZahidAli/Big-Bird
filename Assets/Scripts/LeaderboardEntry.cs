@@ -2,7 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
-
+using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using GameSparks.Api.Requests;
 
 public class LeaderboardEntry : MonoBehaviour {
 
@@ -28,6 +31,15 @@ public class LeaderboardEntry : MonoBehaviour {
         }
     }
 	
+
+    public void SetData(string rank, string userName, string score)
+    {
+        //Debug.Log(rank+userName+score);
+        rankText.text = rank;
+        userNameText.text = userName;
+        scoreText.text = score;
+    }
+
     public void GetPic()
     {
         StartCoroutine(getFBPicture());
