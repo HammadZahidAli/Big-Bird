@@ -32,21 +32,21 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
+  cubemapConvolutionSteps: 4
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 2
-    aniso: 16
+    filterMode: 1
+    aniso: 0
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
+  allowsAlphaSplitting: 1
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
@@ -55,11 +55,19 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 1
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: clouds_front_0
+    - serializedVersion: 2
+      name: clouds_front_0
       rect:
         serializedVersion: 2
         x: 62
@@ -69,18 +77,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.222221, y: 36.388893}
-        - {x: -42.22222, y: 27.388893}
-        - {x: -47.22222, y: 19.388893}
-        - {x: -48.22222, y: 9.388893}
-        - {x: -48.22222, y: -25.611107}
-        - {x: -35.22222, y: -34.611107}
-        - {x: 29.777779, y: -34.611107}
-        - {x: 49.77778, y: -26.611107}
-        - {x: 49.77778, y: 35.388893}
-        - {x: 44.77778, y: 36.388893}
-    - name: clouds_front_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_1
       rect:
         serializedVersion: 2
         x: 996
@@ -90,16 +90,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21.166672, y: 35.388885}
-        - {x: -47.16667, y: 23.388885}
-        - {x: -47.16667, y: -16.611115}
-        - {x: -25.166672, y: -33.611115}
-        - {x: 40.83333, y: -33.611115}
-        - {x: 47.83333, y: -31.611115}
-        - {x: 47.83333, y: 23.388885}
-        - {x: 35.83333, y: 35.388885}
-    - name: clouds_front_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_2
       rect:
         serializedVersion: 2
         x: 1623
@@ -109,16 +103,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -40.833344, y: 31.222221}
-        - {x: -50.833344, y: 7.2222214}
-        - {x: -50.833344, y: -22.777779}
-        - {x: -36.833344, y: -30.777779}
-        - {x: 43.166656, y: -30.777779}
-        - {x: 52.166656, y: -10.777779}
-        - {x: 52.166656, y: 27.222221}
-        - {x: 49.166656, y: 31.222221}
-    - name: clouds_front_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_3
       rect:
         serializedVersion: 2
         x: 2766
@@ -128,17 +116,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -39.333313, y: 36.27778}
-        - {x: -48.333313, y: 32.27778}
-        - {x: -48.333313, y: -24.722221}
-        - {x: -35.333313, y: -31.722221}
-        - {x: -28.333313, y: -34.72222}
-        - {x: 21.666687, y: -34.72222}
-        - {x: 35.666687, y: -31.722221}
-        - {x: 49.666687, y: -16.722221}
-        - {x: 49.666687, y: 36.27778}
-    - name: clouds_front_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_4
       rect:
         serializedVersion: 2
         x: 2123
@@ -148,17 +129,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -40.22223, y: 36.166668}
-        - {x: -46.22223, y: 29.166668}
-        - {x: -48.22223, y: 18.166668}
-        - {x: -48.22223, y: -30.833332}
-        - {x: -35.22223, y: -34.833332}
-        - {x: 35.77777, y: -34.833332}
-        - {x: 49.77777, y: -21.833332}
-        - {x: 49.77777, y: 31.166668}
-        - {x: 46.77777, y: 36.166668}
-    - name: clouds_front_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_5
       rect:
         serializedVersion: 2
         x: 3198
@@ -168,15 +142,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28.333313, y: 31.222223}
-        - {x: -38.333313, y: 22.222223}
-        - {x: -50.333313, y: 0.22222328}
-        - {x: -50.333313, y: -30.777777}
-        - {x: 51.666687, y: -30.777777}
-        - {x: 51.666687, y: 21.222223}
-        - {x: 41.666687, y: 31.222223}
-    - name: clouds_front_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_6
       rect:
         serializedVersion: 2
         x: 3808
@@ -186,14 +155,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -38.27777, y: 34.22222}
-        - {x: -47.27777, y: 27.222221}
-        - {x: -47.27777, y: -33.77778}
-        - {x: 47.72223, y: -33.77778}
-        - {x: 47.72223, y: 28.222221}
-        - {x: 44.72223, y: 34.22222}
-    - name: clouds_front_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_7
       rect:
         serializedVersion: 2
         x: 573
@@ -203,14 +168,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50.666664, y: -21.777779}
-        - {x: -33.666664, y: -30.777779}
-        - {x: 33.333336, y: -30.777779}
-        - {x: 51.333336, y: -15.777779}
-        - {x: 51.333336, y: 31.222221}
-        - {x: -50.666664, y: 31.222221}
-    - name: clouds_front_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clouds_front_8
       rect:
         serializedVersion: 2
         x: 4011
@@ -220,14 +181,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -47.166687, y: 31}
-        - {x: -66.16669, y: 27}
-        - {x: -66.16669, y: -11}
-        - {x: -25.166687, y: -31}
-        - {x: 60.833313, y: -31}
-        - {x: 66.83331, y: -12}
-        - {x: 66.83331, y: 31}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: city
   userData: 

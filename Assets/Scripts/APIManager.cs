@@ -11,12 +11,17 @@ public class APIManager : MonoBehaviour
     Text userNameField, connectionInfoField;
     InputField userNameInput, passwordInput;
 
+    void Wait()
+    {
+
+        FacebookConnect_bttn();
+    }
     // Use this for initialization
     void Start()
     {
         GS.GameSparksAvailable += OnGameSparksConnected;
-
-        FacebookConnect_bttn();
+        Invoke("Wait",3f);
+       // FacebookConnect_bttn();
     }
 
     private void OnGameSparksConnected(bool _isConnected)
@@ -99,7 +104,7 @@ public class APIManager : MonoBehaviour
         // if its not ready we just init FB and use the login method as the callback for the init method //
         if (!FB.IsInitialized)
         {
-            Debug.Log("Initilizing Facebook...");
+            //Debug.Log("Initilizing Facebook...");
             FB.Init(ConnectGameSparksToGameSparks, null);
         }
         else

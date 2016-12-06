@@ -11,13 +11,15 @@ public class InstantVelocity : MonoBehaviour {
 	void Awake()
 	{
 		body2D = GetComponent<Rigidbody2D> ();
-	}
+        vel = -1;
+
+    }
 
 	void Update()
 	{
         //body2D.velocity = velocity;
        // transform.position = Vector3.Lerp(transform.position, Vector3.forward, vel * Time.deltaTime);
-     transform.position = new Vector3(transform.position.x+ 0.5f * Time.deltaTime, transform.position.y,transform.position.z);
+     transform.position = new Vector3(transform.position.x+ vel * Time.deltaTime, transform.position.y,transform.position.z);
 	}
 
 }

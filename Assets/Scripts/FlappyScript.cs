@@ -134,6 +134,7 @@ public class FlappyScript : MonoBehaviour
 
     void MoveBirdOnXAxis()
     {
+
         transform.position += new Vector3(Time.deltaTime * XSpeed, 0, 0);
     }
 

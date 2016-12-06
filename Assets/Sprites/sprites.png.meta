@@ -99,39 +99,53 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 4
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 4096
   textureSettings:
     filterMode: 1
-    aniso: 1
+    aniso: 0
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 1
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings:
   - buildTarget: iPhone
     maxTextureSize: 1024
     textureFormat: -2
     compressionQuality: 50
+    allowsAlphaSplitting: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 1
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: sprites_0
+    - serializedVersion: 2
+      name: sprites_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,9 +153,12 @@ TextureImporter:
         width: 144
         height: 256
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_1
       rect:
         serializedVersion: 2
         x: 146
@@ -149,9 +166,12 @@ TextureImporter:
         width: 144
         height: 256
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_2
       rect:
         serializedVersion: 2
         x: 292
@@ -159,9 +179,12 @@ TextureImporter:
         width: 168
         height: 56
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_3
       rect:
         serializedVersion: 2
         x: 465
@@ -169,9 +192,12 @@ TextureImporter:
         width: 31
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_4
       rect:
         serializedVersion: 2
         x: 502
@@ -179,9 +205,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_5
       rect:
         serializedVersion: 2
         x: 502
@@ -189,9 +218,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_6
       rect:
         serializedVersion: 2
         x: 462
@@ -199,9 +231,12 @@ TextureImporter:
         width: 40
         height: 14
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_7
       rect:
         serializedVersion: 2
         x: 505
@@ -209,9 +244,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_8
       rect:
         serializedVersion: 2
         x: 462
@@ -219,9 +257,12 @@ TextureImporter:
         width: 40
         height: 14
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_9
       rect:
         serializedVersion: 2
         x: 505
@@ -229,9 +270,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_10
       rect:
         serializedVersion: 2
         x: 295
@@ -239,9 +283,12 @@ TextureImporter:
         width: 95
         height: 27
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_12
       rect:
         serializedVersion: 2
         x: 395
@@ -249,9 +296,12 @@ TextureImporter:
         width: 98
         height: 24
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_14
       rect:
         serializedVersion: 2
         x: 496
@@ -259,9 +309,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_15
       rect:
         serializedVersion: 2
         x: 496
@@ -269,9 +322,12 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_16
       rect:
         serializedVersion: 2
         x: 310
@@ -279,9 +335,12 @@ TextureImporter:
         width: 19
         height: 16
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_17
       rect:
         serializedVersion: 2
         x: 351
@@ -289,9 +348,12 @@ TextureImporter:
         width: 89
         height: 24
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_18
       rect:
         serializedVersion: 2
         x: 443
@@ -299,9 +361,12 @@ TextureImporter:
         width: 24
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_19
       rect:
         serializedVersion: 2
         x: 468
@@ -309,9 +374,12 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_20
       rect:
         serializedVersion: 2
         x: 473
@@ -319,9 +387,12 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_21
       rect:
         serializedVersion: 2
         x: 478
@@ -329,9 +400,12 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_22
       rect:
         serializedVersion: 2
         x: 487
@@ -339,9 +413,12 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_23
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_23
       rect:
         serializedVersion: 2
         x: 492
@@ -349,9 +426,12 @@ TextureImporter:
         width: 7
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_24
       rect:
         serializedVersion: 2
         x: 500
@@ -359,9 +439,12 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_25
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_25
       rect:
         serializedVersion: 2
         x: 316
@@ -369,9 +452,12 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_26
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_26
       rect:
         serializedVersion: 2
         x: 292
@@ -379,9 +465,12 @@ TextureImporter:
         width: 57
         height: 16
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_29
       rect:
         serializedVersion: 2
         x: 354
@@ -389,9 +478,12 @@ TextureImporter:
         width: 52
         height: 29
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_30
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_30
       rect:
         serializedVersion: 2
         x: 414
@@ -399,9 +491,12 @@ TextureImporter:
         width: 52
         height: 29
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_31
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_31
       rect:
         serializedVersion: 2
         x: 292
@@ -409,9 +504,12 @@ TextureImporter:
         width: 40
         height: 14
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_32
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_32
       rect:
         serializedVersion: 2
         x: 334
@@ -419,9 +517,12 @@ TextureImporter:
         width: 13
         height: 14
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_33
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_33
       rect:
         serializedVersion: 2
         x: 292
@@ -429,9 +530,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_34
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_34
       rect:
         serializedVersion: 2
         x: 306
@@ -439,9 +543,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_35
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_35
       rect:
         serializedVersion: 2
         x: 320
@@ -449,9 +556,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_36
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_36
       rect:
         serializedVersion: 2
         x: 334
@@ -459,9 +569,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_37
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_37
       rect:
         serializedVersion: 2
         x: 292
@@ -469,9 +582,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_38
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_38
       rect:
         serializedVersion: 2
         x: 306
@@ -479,9 +595,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_39
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_39
       rect:
         serializedVersion: 2
         x: 320
@@ -489,9 +608,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_40
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_40
       rect:
         serializedVersion: 2
         x: 334
@@ -499,9 +621,12 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_41
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_41
       rect:
         serializedVersion: 2
         x: 292
@@ -509,9 +634,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_42
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_42
       rect:
         serializedVersion: 2
         x: 311
@@ -519,9 +647,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_43
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_43
       rect:
         serializedVersion: 2
         x: 292
@@ -529,9 +660,12 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_44
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_44
       rect:
         serializedVersion: 2
         x: 293
@@ -539,9 +673,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_45
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_45
       rect:
         serializedVersion: 2
         x: 3
@@ -549,9 +686,12 @@ TextureImporter:
         width: 113
         height: 57
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_46
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_46
       rect:
         serializedVersion: 2
         x: 121
@@ -559,9 +699,12 @@ TextureImporter:
         width: 22
         height: 22
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_47
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_47
       rect:
         serializedVersion: 2
         x: 121
@@ -569,9 +712,12 @@ TextureImporter:
         width: 22
         height: 22
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_48
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_48
       rect:
         serializedVersion: 2
         x: 121
@@ -579,9 +725,12 @@ TextureImporter:
         width: 13
         height: 14
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_49
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_49
       rect:
         serializedVersion: 2
         x: 137
@@ -589,9 +738,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_50
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_50
       rect:
         serializedVersion: 2
         x: 0
@@ -599,9 +751,12 @@ TextureImporter:
         width: 26
         height: 160
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_51
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_51
       rect:
         serializedVersion: 2
         x: 28
@@ -609,9 +764,12 @@ TextureImporter:
         width: 26
         height: 160
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_52
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_52
       rect:
         serializedVersion: 2
         x: 56
@@ -619,9 +777,12 @@ TextureImporter:
         width: 26
         height: 160
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_53
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_53
       rect:
         serializedVersion: 2
         x: 84
@@ -629,9 +790,12 @@ TextureImporter:
         width: 26
         height: 160
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_54
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_54
       rect:
         serializedVersion: 2
         x: 115
@@ -639,9 +803,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_55
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_55
       rect:
         serializedVersion: 2
         x: 138
@@ -649,9 +816,12 @@ TextureImporter:
         width: 6
         height: 21
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_56
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_56
       rect:
         serializedVersion: 2
         x: 115
@@ -659,9 +829,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_57
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_57
       rect:
         serializedVersion: 2
         x: 138
@@ -669,9 +842,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_58
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_58
       rect:
         serializedVersion: 2
         x: 138
@@ -679,9 +855,12 @@ TextureImporter:
         width: 6
         height: 13
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_59
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_59
       rect:
         serializedVersion: 2
         x: 115
@@ -689,9 +868,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_60
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_60
       rect:
         serializedVersion: 2
         x: 138
@@ -699,9 +881,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_61
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_61
       rect:
         serializedVersion: 2
         x: 138
@@ -709,9 +894,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_62
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_62
       rect:
         serializedVersion: 2
         x: 138
@@ -719,9 +907,12 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_63
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_63
       rect:
         serializedVersion: 2
         x: 115
@@ -729,9 +920,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_64
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_64
       rect:
         serializedVersion: 2
         x: 138
@@ -739,9 +933,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_65
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_65
       rect:
         serializedVersion: 2
         x: 138
@@ -749,9 +946,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_66
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_66
       rect:
         serializedVersion: 2
         x: 115
@@ -759,9 +959,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_67
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_67
       rect:
         serializedVersion: 2
         x: 138
@@ -769,9 +972,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_68
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_68
       rect:
         serializedVersion: 2
         x: 138
@@ -779,9 +985,12 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_69
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_69
       rect:
         serializedVersion: 2
         x: 112
@@ -789,9 +998,12 @@ TextureImporter:
         width: 22
         height: 22
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_70
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_70
       rect:
         serializedVersion: 2
         x: 136
@@ -799,9 +1011,12 @@ TextureImporter:
         width: 8
         height: 18
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_71
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_71
       rect:
         serializedVersion: 2
         x: 112
@@ -809,9 +1024,12 @@ TextureImporter:
         width: 22
         height: 22
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_72
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_72
       rect:
         serializedVersion: 2
         x: 139
@@ -819,9 +1037,12 @@ TextureImporter:
         width: 5
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_73
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_73
       rect:
         serializedVersion: 2
         x: 3
@@ -829,9 +1050,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_74
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_74
       rect:
         serializedVersion: 2
         x: 31
@@ -839,9 +1063,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_75
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_75
       rect:
         serializedVersion: 2
         x: 59
@@ -849,9 +1076,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_76
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_76
       rect:
         serializedVersion: 2
         x: 87
@@ -859,9 +1089,12 @@ TextureImporter:
         width: 17
         height: 12
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_77
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_77
       rect:
         serializedVersion: 2
         x: 137
@@ -869,9 +1102,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_78
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_78
       rect:
         serializedVersion: 2
         x: 112
@@ -879,9 +1115,12 @@ TextureImporter:
         width: 16
         height: 7
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sprites_79
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sprites_79
       rect:
         serializedVersion: 2
         x: 131
@@ -889,7 +1128,12 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
