@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour {
 
         cameraZ = transform.position.z;
 
-
+        //Constants.selectedbird = 9;
         if (Constants.selectedbird == 1)
         { birds[0].SetActive(true); Player = birds[0].transform; }
         else if (Constants.selectedbird == 2)
@@ -32,16 +32,24 @@ public class CameraFollow : MonoBehaviour {
         { birds[7].SetActive(true); Player = birds[7].transform; }
         else if (Constants.selectedbird == 9)
         { birds[8].SetActive(true); Player = birds[8].transform; }
-    }
 
+
+        pos = Player.position;
+    }
+    Vector3 pos;
     float cameraZ;
 
 
-	void Update () {
+    public float smoothTime = 0.5F;
+    private float yVelocity = 0.0F;
 
-      transform.position = new Vector3(Player.position.x + 0.5f, 0, cameraZ);
+    void Update () {
 
-     
+        // transform.position = Player.position.x + 0.5f, 0, cameraZ
+
+        float newPosition = Mathf.SmoothDamp(transform.position.x, Player.position.x+ 0.5f, ref yVelocity, smoothTime);
+        transform.position = new Vector3(newPosition, 0, cameraZ);
+
     }
 
     

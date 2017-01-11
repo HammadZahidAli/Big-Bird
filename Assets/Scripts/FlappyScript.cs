@@ -22,8 +22,8 @@ public class FlappyScript : MonoBehaviour
     {
 
         anim = this.GetComponent<Animator>();
-        anim.enabled = true;
-        anim.SetInteger("selected", Constants.selectedbird);
+        //anim.enabled = true;
+       // anim.SetInteger("selected", Constants.selectedbird);
 
         Invoke("Loop",0.5f);
         ScoreManagerScript.Score = Constants.temScore;
@@ -42,7 +42,7 @@ public class FlappyScript : MonoBehaviour
 
    void Loop()
     {
-        anim.SetInteger("selected", 0);
+      //  anim.SetInteger("selected", 0);
     }
 
     FlappyYAxisTravelState flappyYAxisTravelState;

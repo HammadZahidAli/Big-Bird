@@ -20,7 +20,7 @@ public class APIManager : MonoBehaviour
     void Start()
     {
         GS.GameSparksAvailable += OnGameSparksConnected;
-        Invoke("Wait",3f);
+       // Invoke("Wait",3f);
        // FacebookConnect_bttn();
     }
 

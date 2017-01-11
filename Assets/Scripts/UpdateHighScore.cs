@@ -10,8 +10,8 @@ public class UpdateHighScore : MonoBehaviour {
 
     void OnEnable()
     {
-
-        AdBuddizRewardedVideoManager.didComplete += DidComplete;
+        
+        //AdBuddizRewardedVideoManager.didComplete += DidComplete;
 
         highScoreText.text = "High Score : " + Constants.highScore;
         totalScoreText.text = "Total Score : " + Constants.totalScore;
@@ -40,6 +40,9 @@ public class UpdateHighScore : MonoBehaviour {
     public GameObject LeaderboardObject;
     public void OnClickShowLeaderBoard()
     {
+        //FacebookConnect_bttn();
+        GetComponent<APIManager>().FacebookConnect_bttn();
+
         //LeaderboardManager.ShowLeaderboardUI();
         //LeaderboardController.Instance.LogIn();
         //LeaderboardController.Instance.OnShowLeaderBoard();
@@ -114,7 +117,7 @@ public class UpdateHighScore : MonoBehaviour {
 
     void OnDisable()
     { // unregister as a listener
-       AdBuddizRewardedVideoManager.didComplete -= DidComplete;
+      // AdBuddizRewardedVideoManager.didComplete -= DidComplete;
     }
 
     void DidComplete()

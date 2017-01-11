@@ -75,19 +75,19 @@ int totalCoins = 100;
     void Do()
     {
 
-        if (Constants.count % 10 == 0)
-            UnityAdsManager.Instance.ShowVideoAd();
-        else if (Constants.count % 2 == 0)
+        //if (Constants.count % 10 == 0)
+        //    UnityAdsManager.Instance.ShowVideoAd();
+        if (Constants.count % 2 == 0 && Constants.count!=1)
         {
             AdMobAds.Instance.showInterstitial();
         }
-       else if(Constants.count % 3 == 0)
-        {
+//       else if(Constants.count % 3 == 0)
+ //       {
            // if (AdBuddizBinding.IsReadyToShowAd())
-            {
-                AdBuddizBinding.ShowAd();
-            }
-        }
+ //           {
+//                AdBuddizBinding.ShowAd();
+   //         }
+     //   }
 
 
 
@@ -111,7 +111,7 @@ int totalCoins = 100;
     {
         //if(Constants.totalScore-10 >= 0)
         Constants.totalScore -= ScoreManagerScript.Score;
-        Debug.Log("score:"+ Constants.totalScore);
+       // Debug.Log("score:"+ Constants.totalScore);
 
         if (Constants.totalScore >= 10)
         {
@@ -129,7 +129,7 @@ int totalCoins = 100;
             Constants.totalScore += ScoreManagerScript.Score;
 
 
-        Debug.Log("score:after " + Constants.totalScore);
+        //Debug.Log("score:after " + Constants.totalScore);
         //PlayerPrefs.Save();
 
     }

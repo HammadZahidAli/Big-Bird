@@ -13,8 +13,13 @@ public class Leaderboards : MonoBehaviour {
     public GameObject prefabEntry;
     public GameObject MaskPanelImage;
 
-	// Use this for initialization
+    // Use this for initialization
 
+
+    void Start()
+    {
+    
+    }
     public void GetLeaderboard()
     {
         for (int i = 0; i < entries.Count; i++)
@@ -27,6 +32,7 @@ public class Leaderboards : MonoBehaviour {
 
         entries.Clear();
 
+        //highScoreLeaderboard
         new LeaderboardDataRequest_highScoreLeaderboard().SetEntryCount(30).Send((response) =>
         {
             int i = 0;

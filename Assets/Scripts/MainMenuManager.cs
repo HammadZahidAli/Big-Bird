@@ -50,9 +50,9 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     public string adBuddizKey;
     void Start () {
-        AdBuddizBinding.SetAndroidPublisherKey(adBuddizKey);
-        AdBuddizBinding.CacheAds();
-        AdBuddizBinding.RewardedVideo.Fetch();
+        //AdBuddizBinding.SetAndroidPublisherKey(adBuddizKey);
+        //AdBuddizBinding.CacheAds();
+        //AdBuddizBinding.RewardedVideo.Fetch();
 
         //AdBuddizBinding.SetTestModeActive();
 
@@ -61,7 +61,7 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
         MenuHome ();
 
        
-        Invoke("InvokePopup",3f);
+       // Invoke("InvokePopup",3f);
 
         //gameOver ();
     }
@@ -351,12 +351,12 @@ public class MainMenuManager : SingeltonBase<MainMenuManager> {
 
     public void postScore(string levelName, int score)
     {
-        Debug.Log("coming");
+      //  Debug.Log("coming");
         new GameSparks.Api.Requests.LogEventRequest_postScore().Set_score(score).Send((response) =>
         {
             if (response.HasErrors)
             {
-                Debug.Log("Failed");
+                Debug.Log("Failed"+ response.ToString());
             }
             else
             {

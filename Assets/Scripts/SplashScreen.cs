@@ -16,7 +16,7 @@ public class SplashScreen : MonoBehaviour {
       
         //splashImage.canvasRenderer.SetAlpha(0f);
         //fadein();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         // fadeout();
         // yield return new WaitForSeconds(2f);
 

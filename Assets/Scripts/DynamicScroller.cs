@@ -84,7 +84,8 @@ public class DynamicScroller : MonoBehaviour {
 
         if (cameratransform.position.x < layers[leftindex].transform.position.x+ viewzone)
         {
-           // ScrollLeft();
+            //not
+           ScrollLeft();
         }
 
         if (cameratransform.position.x > layers[rightindex].transform.position.x - viewzone)
